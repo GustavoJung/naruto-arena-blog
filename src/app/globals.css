@@ -63,7 +63,7 @@
 /* Global Custom Kunai Cursor */
 html,
 body {
-  cursor: url('/assets/nawiki/kunai-cursor.png'), auto;
+  cursor: url('/naruto-arena-blog/assets/nawiki/kunai-cursor.png'), auto;
 }
 
 a,
@@ -73,7 +73,7 @@ input,
 select,
 textarea,
 .btn {
-  cursor: url('/assets/nawiki/kunai-cursor.png'), pointer !important;
+  cursor: url('/naruto-arena-blog/assets/nawiki/kunai-cursor.png'), pointer !important;
 }
 
 body {
@@ -106,7 +106,7 @@ body {
   left: 250px;
   right: 0;
   bottom: 0;
-  background-image: url('/naruto.jpg');
+  background-image: url('/naruto-arena-blog/naruto.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

@@ -1,6 +1,8 @@
 import missionsData from '../../public/assets/nawiki/missions_out/missions_out.json';
 import { MissionSession } from './types';
 
+const BASE_PATH = '/naruto-arena-blog';
+
 // Import and type-cast the missions data
 export const ALL_MISSION_SESSIONS: MissionSession[] = (missionsData as any).sessions || [];
 
@@ -22,9 +24,9 @@ export function getMissionImageUrl(mission: any, type: "mission" | "reward" | st
         filePath = filePath.replace(/^public\//, "").replace(/^\/+/, "");
 
         if (filePath.startsWith("missions_out/")) {
-            return `/assets/nawiki/${filePath}`;
+            return `${BASE_PATH}/assets/nawiki/${filePath}`;
         }
-        return `/${filePath}`;
+        return `${BASE_PATH}/${filePath}`;
     }
 
     if (normalized === "mission" && mission?.card?.imageUrl) return mission.card.imageUrl;
@@ -48,14 +50,14 @@ export function getSessionImageUrl(session: any): string {
     if (!session.image?.file) {
         // Fallback to exact local mapped string
         if (session.id && SESSION_IMAGE_MAP[session.id]) {
-            return `/assets/nawiki/missions_out/images/${SESSION_IMAGE_MAP[session.id]}`;
+            return `${BASE_PATH}/assets/nawiki/missions_out/images/${SESSION_IMAGE_MAP[session.id]}`;
         }
         return '';
     }
 
     let filePath = session.image.file;
     filePath = filePath.replace(/^public\//, "").replace(/^\/+/, "");
-    return `/${filePath}`;
+    return `${BASE_PATH}/${filePath}`;
 }
 
 // Helper to check if mission is completed

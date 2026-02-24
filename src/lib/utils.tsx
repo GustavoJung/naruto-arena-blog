@@ -1,5 +1,6 @@
-import React from 'react';
 import { Character } from "./types";
+
+const BASE_PATH = '/naruto-arena-blog';
 
 const PNG_CHARACTERS = [
     'Gaara', 'Kankuro', 'Temari', 'Uchiha Madara', 'Uchiha Izuna', 'Uchiha Shisui',
@@ -70,7 +71,7 @@ const PRE_PREFIXED_SKILLS = [
 ];
 
 export function getCharacterImageUrl(id: string, name: string): string {
-    return `/assets/nawiki/characters/${id.toLowerCase()}.png`;
+    return `${BASE_PATH}/assets/nawiki/characters/${id.toLowerCase()}.png`;
 }
 
 export function handleCharacterImageError(e: React.SyntheticEvent<HTMLImageElement, Event>, id: string, name: string) {
@@ -83,7 +84,7 @@ export function handleCharacterImageError(e: React.SyntheticEvent<HTMLImageEleme
     } else if (currentSrc.includes(id.toLowerCase())) {
         // If ID-based JPEG failed, try name-based lookup
         const finalName = CHARACTER_NAME_MAPPING[name] || name;
-        target.src = `/assets/nawiki/characters/${finalName}.jpg`;
+        target.src = `${BASE_PATH}/assets/nawiki/characters/${finalName}.jpg`;
     } else {
         // Final fallback: hide
         target.onerror = null;
@@ -98,7 +99,7 @@ export function getSkillImageUrl(skillId: string, charId: string, skillName: str
         : skillId;
 
     const finalName = `${charId}__${skillPart}`;
-    return `/assets/nawiki/skills/${finalName}.png`;
+    return `${BASE_PATH}/assets/nawiki/skills/${finalName}.png`;
 }
 
 export function handleSkillImageError(e: React.SyntheticEvent<HTMLImageElement, Event>, skillId: string, charId: string, skillName: string, charName?: string) {
@@ -114,7 +115,7 @@ export function handleSkillImageError(e: React.SyntheticEvent<HTMLImageElement, 
         if (charName && PRE_PREFIXED_SKILLS.some(s => skillName.includes(s))) {
             finalName = `${charName} - ${skillName}`;
         }
-        target.src = `/assets/nawiki/skills/${finalName}.jpg`;
+        target.src = `${BASE_PATH}/assets/nawiki/skills/${finalName}.jpg`;
     } else {
         // Final fallback
         target.onerror = null;

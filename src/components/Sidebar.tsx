@@ -26,7 +26,7 @@ export default function Sidebar() {
                 <div className={styles.container}>
                     <div className={styles.logo}>
                         <img
-                            src="/logo-naruto.png"
+                            src="/naruto-arena-blog/logo-naruto.png"
                             alt="Naruto Arena Logo"
                             className={styles.logoImage}
                         />
