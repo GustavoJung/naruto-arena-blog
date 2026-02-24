@@ -211,7 +211,7 @@ export default function MissionsPage() {
                                     <h3>Times Recomendados</h3>
                                     <div className={styles.teamsList}>
                                         {linkedTeams.map(team => (
-                                            <Link key={team.id} href={`/teams/${team.id}`} className={styles.teamLink}>
+                                            <Link key={team.id} href={`/team-details?id=${team.id}`} className={styles.teamLink}>
                                                 <div className={styles.teamMiniCard}>
                                                     <div className={styles.teamAvatarGroup}>
                                                         {team.characters.map((char, i) => (

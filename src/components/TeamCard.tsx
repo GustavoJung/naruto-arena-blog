@@ -26,7 +26,7 @@ export default function TeamCard({ team }: TeamCardProps) {
     };
 
     return (
-        <Link href={`/teams/${team.id}`} className={styles.cardLink}>
+        <Link href={`/team-details?id=${team.id}`} className={styles.cardLink}>
             <div className={styles.card}>
                 <div className={styles.header}>
                     <div>
