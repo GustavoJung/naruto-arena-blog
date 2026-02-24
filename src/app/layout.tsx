@@ -8,19 +8,19 @@ export const metadata: Metadata = {
   description: 'Descubra as melhores composições de times para o Naruto Arena.',
 };
 
-import { Outfit, Poppins } from 'next/font/google';
+import { Kanit, Inter } from 'next/font/google';
 import Sidebar from '@/components/Sidebar';
 
-const outfit = Outfit({
+const kanit = Kanit({
+  weight: ['400', '500', '600', '700', '800', '900'],
   subsets: ['latin'],
-  variable: '--font-outfit',
+  variable: '--font-kanit',
   display: 'swap',
 });
 
-const poppins = Poppins({
-  weight: ['400', '600', '700'],
+const inter = Inter({
   subsets: ['latin'],
-  variable: '--font-poppins',
+  variable: '--font-inter',
   display: 'swap',
 });
 
@@ -31,7 +31,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className={`${outfit.variable} ${poppins.variable}`}>
+      <body className={`${kanit.variable} ${inter.variable}`}>
         <Providers>
           <div className="layout-root">
             <Sidebar />

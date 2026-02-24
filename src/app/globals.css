@@ -34,8 +34,8 @@
   --radius-lg: 16px;
   --radius-xl: 24px;
 
-  --font-family-body: var(--font-poppins), 'Inter', system-ui, sans-serif;
-  --font-family-heading: var(--font-outfit), 'Impact', sans-serif;
+  --font-family-body: var(--font-inter), 'Inter', system-ui, sans-serif;
+  --font-family-heading: var(--font-kanit), 'Impact', sans-serif;
 }
 
 /* Modern Thin Scrollbar */
