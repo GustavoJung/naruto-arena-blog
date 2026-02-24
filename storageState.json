@@ -1,0 +1,67 @@
+{
+  "cookies": [
+    {
+      "name": "cf_clearance",
+      "value": "oSFaaMmppPqYVvorypqzCMmyUkSbMNFUU1KFDJscza4-1771553509-1.2.1.1-ul9h_UnR.m7da2BtPoS0c.TuD_hdH7kvbzPpwXuOnfRxTHWaPWM2SYPipyao4Q6FynAXn.HEtk4o5byUBwr_vjDo7F6_IRz3USYCgp2a9uMSmx19c.15_vEiyho7icjknndryjdHRL57.NuhUqhaJHxG8KxXG7cFrT1802QWLKN3NrbApxAXylZE1YdIsvwVFGCxdWI3ix1yjMDpqIjr84HPNMrLIbF6gGw9BoMXhZc",
+      "domain": ".naruto-arena.site",
+      "path": "/",
+      "expires": 1803089509.528054,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None",
+      "partitionKey": "https://naruto-arena.site",
+      "_crHasCrossSiteAncestor": false
+    },
+    {
+      "name": "_ga",
+      "value": "GA1.1.317321320.1771553510",
+      "domain": ".naruto-arena.site",
+      "path": "/",
+      "expires": 1806113535.670913,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "token",
+      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OGRjOTczMWMyYzRhMzFkYzNlYzMxOSIsImxhc3RPcHBvbmVudCI6ImNhcHRhaW5fbWNuYXN0eSIsImhpZ2hlc3RMZXZlbCI6MjEsImlzTGFkZGVyQXZhaWxhYmxlIjpmYWxzZSwic3RyZWFrIjoyLCJ1c2VybmFtZSI6ImNhcmFpYmEiLCJsZXZlbCI6MjEsInN0YXRpY1VzZXIiOiJDYXJhaWJhIiwibWVtYmVyVHlwZSI6Ik1lbWJlciIsImlhdCI6MTc3MTU1MzUzNCwiZXhwIjoxNzcxNTY0MzM0fQ.TcKWB9Zr2efKNzd_PcgLN_XAZSH2RU2rVRaTFbkn-pw",
+      "domain": "www.naruto-arena.site",
+      "path": "/",
+      "expires": 1771582334.305849,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga_J35D2P3P65",
+      "value": "GS2.1.s1771553509$o1$g1$t1771553535$j34$l0$h0",
+      "domain": ".naruto-arena.site",
+      "path": "/",
+      "expires": 1806113535.670688,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "IDE",
+      "value": "AHWqTUnSe0oZIiVZJcfTP5Y1WEgfo3w5EC1EsqQwRfeILfUBzJuC1rBylmLsdzZ9ExU",
+      "domain": ".doubleclick.net",
+      "path": "/",
+      "expires": 1806113535.775137,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://www.google.com",
+      "localStorage": [
+        {
+          "name": "rc::h",
+          "value": "1771553510418"
+        }
+      ]
+    }
+  ]
+}

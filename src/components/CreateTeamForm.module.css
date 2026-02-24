@@ -1,0 +1,84 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--color-border);
+}
+
+.error {
+    background-color: #fee2e2;
+    color: #ef4444;
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-md);
+    border: 1px solid #fecaca;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.label {
+    font-weight: bold;
+    color: var(--color-secondary);
+}
+
+.input,
+.textarea {
+    padding: var(--spacing-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-family: var(--font-family-body);
+    font-size: 1rem;
+}
+
+.input:focus,
+.textarea:focus {
+    outline: 2px solid var(--color-primary);
+    border-color: transparent;
+}
+
+.textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.selectedContainer {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+    flex-wrap: wrap;
+    min-height: 40px;
+    align-items: center;
+}
+
+.selectedCharTag {
+    background-color: var(--color-secondary);
+    color: white;
+    padding: 4px 8px;
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.removeBtn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.removeBtn:hover {
+    color: #ef4444;
+}

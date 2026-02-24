@@ -1,66 +1,61 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+'use client';
+
+import { useState } from 'react';
+import { useTeams } from '@/context/TeamContext';
+import TeamCard from '@/components/TeamCard';
+import CreateTeamBar from '@/components/CreateTeamBar';
+import styles from './page.module.css';
 
 export default function Home() {
+  const { teams } = useTeams();
+  const [filter, setFilter] = useState<'All' | 'Mission' | 'Ranking'>('All');
+
+  const filteredTeams = teams.filter(team => {
+    if (filter === 'All') return true;
+    return team.purpose === filter;
+  });
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className={styles.container}>
+      <h1 className={styles.title}>Times Lendários</h1>
+      <div className={styles.sectionWrapper}>
+        <div className={styles.header}>
+
+
+          <div className={styles.filterTabs}>
+            {[
+              { id: 'All', label: 'Todos' },
+              { id: 'Mission', label: 'Missões' },
+              { id: 'Ranking', label: 'Ranking' }
+            ].map((f) => (
+              <button
+                key={f.id}
+                className={`${styles.filterTab} ${filter === f.id ? styles.active : ''}`}
+                onClick={() => setFilter(f.id as any)}
+              >
+                {f.label}
+              </button>
+            ))}
+          </div>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className={styles.grid}>
+          {filteredTeams.length === 0 ? (
+            <div className="text-white text-center w-full py-10">Nenhum time encontrado para esta categoria.</div>
+          ) : (
+            filteredTeams.map((team) => (
+              <div key={team.id} style={{ width: '350px', scrollSnapAlign: 'start' }}>
+                <TeamCard team={team} />
+              </div>
+            ))
+          )}
         </div>
-      </main>
+      </div>
+
+      {/* Spacer to prevent content from being hidden behind the fixed bottom bar */}
+      <div style={{ height: '150px' }}></div>
+
+      <CreateTeamBar />
     </div>
   );
 }

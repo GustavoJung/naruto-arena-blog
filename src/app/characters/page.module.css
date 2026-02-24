@@ -1,0 +1,599 @@
+.container {
+    padding: var(--spacing-lg) 0;
+    max-width: 1200px;
+    margin: 5vh auto 0 auto;
+}
+
+.sectionWrapper {
+    background-color: rgba(0, 46, 93, 0.3);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 100%;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: white;
+    text-shadow: 0 0 10px rgba(255, 165, 0, 0.6), 2px 2px 4px rgba(0, 0, 0, 0.8);
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+}
+
+.filtersContainer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+    align-items: center;
+}
+
+.searchWrapper {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+}
+
+.searchIcon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-text-muted);
+}
+
+.searchInput {
+    padding: var(--spacing-sm) var(--spacing-md) var(--spacing-sm) 38px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    font-family: var(--font-family-body);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s;
+}
+
+.searchInput:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.2);
+    background: #ffffff;
+}
+
+.chakraFilters {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.filterBtn {
+    display: flex;
+    align-items: center;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(15, 23, 42, 0.6);
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    backdrop-filter: blur(5px);
+}
+
+.filterBtn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.filterBtn.active {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    box-shadow: 0 4px 15px rgba(249, 115, 22, 0.3);
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 2px solid transparent;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    background-color: white;
+}
+
+.card.selected {
+    border-color: var(--color-primary);
+    background-color: white;
+    box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 2rem;
+    color: #374151;
+    border: 3px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: visible;
+}
+
+.dotsContainer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    gap: 2px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.chakraDot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1px solid white;
+}
+
+/* Reusing dot colors - ideally should be shared variables */
+.chakraDot[data-type="Taijutsu"],
+.chakraDot[data-type="taijutsu"] {
+    background-color: #22c55e;
+}
+
+.chakraDot[data-type="Ninjutsu"],
+.chakraDot[data-type="ninjutsu"] {
+    background-color: #3b82f6;
+}
+
+.chakraDot[data-type="Genjutsu"],
+.chakraDot[data-type="genjutsu"] {
+    background-color: #94a3b8;
+}
+
+.chakraDot[data-type="Bloodline"],
+.chakraDot[data-type="bloodline"] {
+    background-color: #ef4444;
+}
+
+.chakraDot[data-type="Random"],
+.chakraDot[data-type="random"] {
+    background-color: #000000;
+}
+
+.charName {
+    font-weight: bold;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.detailsPanel {
+    position: sticky;
+    bottom: var(--spacing-lg);
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+    animation: slideUp 0.3s ease-out;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.closeButton {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    background: #f1f5f9;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--color-text-muted);
+    transition: all 0.2s;
+    z-index: 10;
+}
+
+.closeButton:hover {
+    background: #e2e8f0;
+    color: var(--color-primary);
+    transform: rotate(90deg);
+}
+
+.detailsHeader {
+    display: flex;
+    gap: var(--spacing-xl);
+    align-items: center;
+    margin-bottom: var(--spacing-xl);
+    border-bottom: 2px solid #eee;
+    padding-bottom: var(--spacing-lg);
+}
+
+.headerInfo {
+    flex-grow: 1;
+}
+
+.largeAvatar {
+    width: 100px;
+    height: 100px;
+    background: #e5e7eb;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: 800;
+    color: #374151;
+    border: 4px solid white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.detailsName {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.typeTags {
+    display: flex;
+    gap: 8px;
+}
+
+.typeTag {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: white;
+}
+
+.typeTag[data-type="Taijutsu"] {
+    background: #22c55e;
+}
+
+.typeTag[data-type="Ninjutsu"] {
+    background: #3b82f6;
+}
+
+.typeTag[data-type="Genjutsu"] {
+    background: #94a3b8;
+}
+
+.typeTag[data-type="Bloodline"] {
+    background: #ef4444;
+}
+
+.typeTag[data-type="Random"] {
+    background: #000;
+}
+
+.skillsSection {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.sectionTitle {
+    font-size: 1.5rem;
+    color: #1e293b;
+    border-left: 5px solid var(--color-primary);
+    padding-left: 12px;
+}
+
+.skillsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.skillCard {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    transition: transform 0.2s;
+}
+
+.skillCard:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-primary);
+}
+
+.skillTop {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+}
+
+.skillIcon {
+    width: 48px;
+    height: 48px;
+    background: #1e293b;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.skillIcon[data-main-type="Taijutsu"] {
+    background: #22c55e;
+}
+
+.skillIcon[data-main-type="Ninjutsu"] {
+    background: #3b82f6;
+}
+
+.skillIcon[data-main-type="Bloodline"] {
+    background: #ef4444;
+}
+
+.skillMainInfo {
+    flex-grow: 1;
+}
+
+.skillName {
+    font-size: 1.1rem;
+    color: #1e293b;
+    margin: 0;
+    text-shadow: none;
+    text-transform: none;
+}
+
+.skillClasses {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    margin-top: 2px;
+}
+
+.classTag {
+    font-size: 0.65rem;
+    background: #e2e8f0;
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #475569;
+    font-weight: bold;
+}
+
+.skillStats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    border-top: 1px solid #edf2f7;
+    border-bottom: 1px solid #edf2f7;
+}
+
+.statLine {
+    font-size: 0.75rem;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.avatarImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+    display: block;
+}
+
+.skillIconImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+        gap: var(--spacing-sm);
+    }
+
+    .card {
+        padding: var(--spacing-sm);
+    }
+
+    .avatar {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+
+    .detailsPanel {
+        padding: var(--spacing-md);
+        bottom: 0;
+        border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+
+    .detailsHeader {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        text-align: center;
+    }
+
+    .detailsName {
+        font-size: 1.8rem;
+    }
+
+    .typeTags {
+        justify-content: center;
+    }
+
+    .skillsGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.descriptionSection {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(249, 115, 22, 0.1);
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    margin: var(--spacing-md) 0;
+}
+
+.charDescription {
+    color: var(--color-text);
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.requirements {
+    margin-top: var(--spacing-sm);
+    padding-top: var(--spacing-sm);
+    border-top: 1px solid rgba(249, 115, 22, 0.1);
+    font-size: 0.85rem;
+    color: #475569;
+}
+
+.requirements strong {
+    color: var(--color-primary);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    margin-right: 4px;
+}
+
+.chakraCost {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.costItem {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.costItem[data-type="taijutsu"] {
+    background-color: #22c55e;
+}
+
+.costItem[data-type="ninjutsu"] {
+    background-color: #3b82f6;
+}
+
+.costItem[data-type="genjutsu"] {
+    background-color: #94a3b8;
+}
+
+.costItem[data-type="bloodline"] {
+    background-color: #ef4444;
+}
+
+.costItem[data-type="random"] {
+    background-color: #000;
+}
+
+/* Description Tags */
+.descDamage {
+    color: #ef4444;
+    font-weight: 700;
+}
+
+.descSkillName {
+    color: #3b82f6;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.descImprovements {
+    color: #22c55e;
+    font-weight: 700;
+}
+
+.descEffects {
+    color: #a855f7;
+    font-weight: 700;
+}
+
+.descDefense {
+    color: #f97316;
+    font-weight: 700;
+}
+
+.descClasses {
+    color: #64748b;
+    font-weight: 700;
+}

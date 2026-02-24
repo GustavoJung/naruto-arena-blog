@@ -1,0 +1,49 @@
+.toast {
+    position: fixed;
+    top: var(--spacing-lg);
+    right: var(--spacing-lg);
+    background: white;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--radius-md);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    z-index: 2000;
+    transform: translateX(120%);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    min-width: 300px;
+    border-left: 4px solid #ddd;
+}
+
+.show {
+    transform: translateX(0);
+}
+
+.success {
+    border-left-color: #22c55e;
+}
+
+.success svg {
+    color: #22c55e;
+}
+
+.error {
+    border-left-color: #ef4444;
+}
+
+.error svg {
+    color: #ef4444;
+}
+
+.closeBtn {
+    margin-left: auto;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #999;
+}
+
+.closeBtn:hover {
+    color: #333;
+}

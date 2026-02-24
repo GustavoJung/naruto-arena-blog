@@ -1,0 +1,247 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: var(--spacing-sm);
+    max-height: 550px;
+    overflow-y: auto;
+    padding: var(--spacing-sm) var(--spacing-sm) 60px var(--spacing-sm);
+    /* Bottom breathing room */
+    background: white;
+    border-radius: var(--radius-md);
+}
+
+.charItem {
+    position: relative;
+}
+
+.characterBtn {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xs);
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.characterBtn:hover:not(.disabled) {
+    border-color: var(--color-primary);
+    background: #fff5eb;
+    transform: scale(1.02);
+}
+
+.disabled {
+    opacity: 0.5;
+    filter: grayscale(1);
+    cursor: not-allowed;
+}
+
+.avatarPlaceholder {
+    width: 52px;
+    height: 52px;
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+    border-radius: 16px;
+    /* Squircle look */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.3rem;
+    color: #475569;
+    position: relative;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.name {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #1e293b;
+    text-align: center;
+}
+
+.dotsContainer {
+    position: absolute;
+    bottom: -6px;
+    right: -6px;
+    display: flex;
+    gap: 3px;
+    background: white;
+    padding: 3px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: var(--shadow-sm);
+    z-index: 2;
+}
+
+.chakraDot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1.5px solid white;
+}
+
+.chakraDot[data-type="Taijutsu"] {
+    background-color: #22c55e;
+}
+
+.chakraDot[data-type="Ninjutsu"] {
+    background-color: #3b82f6;
+}
+
+.chakraDot[data-type="Genjutsu"] {
+    background-color: #ffffff;
+    border-color: #cbd5e1;
+}
+
+.chakraDot[data-type="Bloodline"] {
+    background-color: #ef4444;
+}
+
+.chakraDot[data-type="Random"] {
+    background-color: #0f172a;
+}
+
+/* Skill Preview Hover */
+.skillPreview {
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #0f172a;
+    color: white;
+    padding: var(--spacing-md);
+    border-radius: var(--radius-lg);
+    width: 160px;
+    z-index: 100;
+    box-shadow: var(--shadow-xl), 0 0 0 1px rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    animation: peekIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.skillPreview.showBelow {
+    bottom: auto;
+    top: 110%;
+    animation: peekInBelow 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.skillPreview.alignLeft {
+    left: 0;
+    transform: none;
+}
+
+.skillPreview.alignRight {
+    left: auto;
+    right: 0;
+    transform: none;
+}
+
+@keyframes peekIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+@keyframes peekInBelow {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+.previewName {
+    font-size: 0.85rem;
+    font-weight: 800;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    padding-bottom: var(--spacing-xs);
+    text-align: center;
+    color: var(--color-primary);
+}
+
+.skillsRow {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+}
+
+.miniSkill {
+    display: flex;
+}
+
+.miniIcon {
+    width: 26px;
+    height: 26px;
+    background: #334155;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.miniIcon[data-main-type="Taijutsu"] {
+    background: linear-gradient(135deg, #22c55e 0%, #15803d 100%);
+}
+
+.miniIcon[data-main-type="Ninjutsu"] {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+}
+
+.miniIcon[data-main-type="Bloodline"] {
+    background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
+}
+
+.previewHint {
+    font-size: 0.65rem;
+    font-weight: 600;
+    opacity: 0.6;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.charAvatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+    display: block;
+}
+
+.skillIcon {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+    display: block;
+}
+
+.footerNote {
+    font-size: 0.7rem;
+    color: #94a3b8;
+    margin-top: var(--spacing-sm);
+    font-style: italic;
+    text-align: center;
+}

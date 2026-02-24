@@ -1,0 +1,1553 @@
+{
+  "sourceRoot": "https://www.naruto-arena.site/ninja-missions",
+  "generatedAt": "2026-02-17 15:29:56",
+  "sessions": [
+    {
+      "id": "a-rank-missions",
+      "title": "A Rank Missions",
+      "description": "The A Rank Missions are only assigned to to highly experienced ninja. With these missions you are able to unlock teamleaders.",
+      "url": "https://www.naruto-arena.site/missions/a-rank-missions",
+      "image": {
+        "url": "https://i.imgur.com/loR84Yz.jpg",
+        "file": "missions_out/images/session__a-rank-missions__loR84Yz.jpg"
+      },
+      "missions": []
+    },
+    {
+      "id": "b-rank-missions",
+      "title": "B Rank Missions",
+      "description": "The B Rank Missions are only assigned to to experienced ninja. With these missions you are able to unlock villians and subordinates of the most dangerous ninjas.",
+      "url": "https://www.naruto-arena.site/missions/b-rank-missions",
+      "image": {
+        "url": "https://i.imgur.com/FZOkjSS.jpg",
+        "file": "missions_out/images/session__b-rank-missions__FZOkjSS.jpg"
+      },
+      "missions": [
+        {
+          "id": "devotion",
+          "title": "Devotion",
+          "section": "B Rank Missions",
+          "card": {
+            "imageUrl": "https://i.imgur.com/VxfyjZy.jpg",
+            "isAvailable": true,
+            "isLevelAvailable": true,
+            "isCompleted": true,
+            "rankRequirement": "Chuunin",
+            "levelRequirement": 11,
+            "completedRequeriments": [],
+            "unlockedCharacter": "Momochi Zabuza"
+          },
+          "missionInfo": {
+            "Mission name": "Devotion",
+            "Mission type": "B Rank Missions"
+          },
+          "requirements": "Rank: At least Chuunin",
+          "reward": "Momochi Zabuza",
+          "goals": [
+            {
+              "text": "Win 8 battles with Haku. (8/8)",
+              "isCompleted": true
+            }
+          ],
+          "images": {
+            "mission": {
+              "url": "https://i.imgur.com/VxfyjZy.jpg",
+              "file": "missions_out/images/b-rank-missions__devotion__mission__VxfyjZy.jpg"
+            },
+            "reward": {
+              "url": "https://i.imgur.com/OzHvYsF.png",
+              "file": "missions_out/images/b-rank-missions__devotion__reward__OzHvYsF.png"
+            }
+          },
+          "pageUrl": "https://www.naruto-arena.site/mission/devotion"
+        },
+        {
+          "id": "survival",
+          "title": "Survival",
+          "section": "B Rank Missions",
+          "card": {
+            "imageUrl": "https://i.imgur.com/CyXcyCy.jpg",
+            "isAvailable": true,
+            "isLevelAvailable": true,
+            "isCompleted": true,
+            "rankRequirement": "Missing-Nin",
+            "levelRequirement": 16,
+            "completedRequeriments": [],
+            "unlockedCharacter": "Yakushi Kabuto"
+          },
+          "missionInfo": {
+            "Mission name": "Survival",
+            "Mission type": "B Rank Missions"
+          },
+          "requirements": "Rank: At least Missing-Nin",
+          "reward": "Yakushi Kabuto",
+          "goals": [
+            {
+              "text": "Win 5 battles with Uzumaki Naruto, Uchiha Sasuke and Haruno Sakura on the same team.(5/5)",
+              "isCompleted": true
+            }
+          ],
+          "images": {
+            "mission": {
+              "url": "https://i.imgur.com/CyXcyCy.jpg",
+              "file": "missions_out/images/b-rank-missions__survival__mission__CyXcyCy.jpg"
+            },
+            "reward": {
+              "url": "https://i.imgur.com/ZIyW33w.png",
+              "file": "missions_out/images/b-rank-missions__survival__reward__ZIyW33w.png"
+            }
+          },
+          "pageUrl": "https://www.naruto-arena.site/mission/survival"
+        },
+        {
+          "id": "the-search-for-kimimaro",
+          "title": "The Search for Kimimaro",
+          "section": "B Rank Missions",
+          "card": {
+            "imageUrl": "https://i.imgur.com/ymOmjnR.jpeg",
+            "isAvailable": true,
+            "isLevelAvailable": true,
+            "isCompleted": true,
+            "rankRequirement": "Missing-Nin",
+            "levelRequirement": 16,
+            "completedRequeriments": [
+              {
+                "name": "The Redemption of Gaara",
+                "color": "green"
+              }
+            ],
+            "unlockedCharacter": "Kimimaro"
+          },
+          "missionInfo": {
+            "Mission name": "The Search for Kimimaro",
+            "Mission type": "B Rank Missions"
+          },
+          "requirements": "Rank: At least Missing-Nin",
+          "reward": "Kimimaro",
+          "goals": [
+            {
+              "text": "Win 4 battles in a row with Rock Lee or Gaara Rehabilitated. (4/4)",
+              "isCompleted": true
+            }
+          ],
+          "images": {
+            "mission": {
+              "url": "https://i.imgur.com/ymOmjnR.jpeg",
+              "file": "missions_out/images/b-rank-missions__the-search-for-kimimaro__mission__ymOmjnR.jpeg"
+            },
+            "reward": {
+              "url": "https://i.imgur.com/qzCv58M.png",
+              "file": "missions_out/images/b-rank-missions__the-search-for-kimimaro__reward__qzCv58M.png"
+            }
+          },
+          "pageUrl": "https://www.naruto-arena.site/mission/the-search-for-kimimaro"
+        },
+        {
+          "id": "the-drunken-master",
+          "title": "The Drunken Master",
+          "section": "B Rank Missions",
+          "card": {
+            "imageUrl": "https://i.imgur.com/CVot6mQ.jpeg",
+            "isAvailable": true,
+            "isLevelAvailable": true,
+            "isCompleted": false,
+            "rankRequirement": "Missing-Nin",
+            "levelRequirement": 16,
+            "completedRequeriments": [
+              {
+                "name": "The Search for Kimimaro",
+                "color": "green"
+              }
+            ],
+            "unlockedCharacter": "Drunken Lee"
+          },
+          "missionInfo": {
+            "Mission name": "The Drunken Master",
+            "Mission type": "B Rank Missions"
+          },
+          "requirements": "Rank: At least Missing-Nin",
+          "reward": "Drunken Lee",
+          "goals": [
+            {
+              "text": "Win 4 battles in a row with Rock Lee or Kimimaro. (0/4)",
+              "isCompleted": false
+            },
+            {
+              "text": "Use Kimimaro's \"Dance of the Camellia\" 10 times. (2/10)",
+              "isCompleted": false
+            }
+          ],
+          "images": {
+            "mission": {
+              "url": "https://i.imgur.com/CVot6mQ.jpeg",
+              "file": "missions_out/images/b-rank-missions__the-drunken-master__mission__CVot6mQ.jpeg"
+            },
+            "reward": {
+              "url": "https://i.imgur.com/QYXQyIZ.png",
+              "file": "missions_out/images/b-rank-missions__the-drunken-master__reward__QYXQyIZ.png"
+            }
+          },
+          "pageUrl": "https://www.naruto-arena.site/mission/the-drunken-master"
+        },
+        {
+          "id": "medical-training",
+          "title": "Medical Training",
+          "section": "B Rank Missions",
+          "card": {
+            "imageUrl": "https://i.imgur.com/wnsCvez.jpg",
+            "isAvailable": true,
+            "isLevelAvailable": true,
+            "isCompleted": true,
+            "rankRequirement": "Missing-Nin",
+            "levelRequirement": 16,
+            "completedRequeriments": [
+              {
+                "name": "Survival",
+                "color": "green"
+              }
+            ],
+            "unlockedCharacter": "Shizune"
+          },
+          "missionInfo": {
+            "Mission name": "Medical Training",
+            "Mission type": "B Rank Missions"
+          },
+          "requirements": "Rank: At least Missing-Nin",
+          "reward": "Shizune",
+          "goals": [
+            {
+              "text": "Win 10 battles with Haruno Sakura. (10/10)",
+              "isCompleted": true
+            }
+          ],
+          "images": {
+            "mission": {
+              "url": "https://i.imgur.com/wnsCvez.jpg",
+              "file": "missions_out/images/b-rank-missions__medical-training__mission__wnsCvez.jpg"
+            },
+            "reward": {
+              "url": "https://i.imgur.com/V4ZPeu0.png",
+              "file": "missions_out/images/b-rank-missions__medical-training__reward__V4ZPeu0.png"
+            }
+          },
+          "pageUrl": "https://www.naruto-arena.site/mission/medical-training"
+        },
+        {
+          "id": "the-rise-of-a-jinchuuriki",
+          "title": "The Rise of a Jinchuuriki",
+          "section": "B Rank Missions",
+          "card": {
+            "imageUrl": "https://i.imgur.com/MSaFGhV.jpg",
+            "isAvailable": true,
+            "isLevelAvailable": true,
+            "isCompleted": false,
+            "rankRequirement": "Missing-Nin",
+            "levelRequirement": 16,
+            "completedRequeriments": [
+              {
+                "name": "Devotion",
+                "color": "green"
+              }
+            ],
+            "unlockedCharacter": "Kyuubi Naruto"
+          },
+          "missionInfo": {
+            "Mission name": "The Rise of a Jinchuuriki",
+            "Mission type": "B Rank Missions"
+          },
+          "requirements": "Rank: At least Missing-Nin",
+          "reward": "Kyuubi Naruto",
+          "goals": [
+            {
+              "text": "Win 12 battles with Uzumaki Naruto. (0/12)",
+              "isCompleted": false
+            },
+            {
+              "text": "Win 4 battles in a row with Uzumaki Naruto. (0/4)",
+              "isCompleted": false
+            },
+            {
+              "text": "Win 2 battles in a row with Uzumaki Naruto and Uchiha Sasuke on the same team.(0/2)",
+              "isCompleted": false
+            }
+          ],
+          "images": {
+            "mission": {
+              "url": "https://i.imgur.com/MSaFGhV.jpg",
+              "file": "missions_out/images/b-rank-missions__the-rise-of-a-jinchuuriki__mission__MSaFGhV.jpg"
+            },
+            "reward": {
+              "url": "https://i.imgur.com/g8Hgdw3.png",
+              "file": "missions_out/images/b-rank-missions__the-rise-of-a-jinchuuriki__reward__g8Hgdw3.png"
+            }
+          },
+          "pageUrl": "https://www.naruto-arena.site/mission/the-rise-of-a-jinchuuriki"
+        },
+        {
+          "id": "the-beast-inside",
+          "title": "The Beast Inside",
+          "section": "B Rank Missions",
+          "card": {
+            "imageUrl": "https://i.imgur.com/xQNpJsZ.jpeg",
+            "isAvailable": true,
+            "isLevelAvailable": true,
+            "isCompleted": false,
+            "rankRequirement": "Missing-Nin",
+            "levelRequirement": 16,
+            "completedRequeriments": [],
+            "unlockedCharacter": "Shukaku Gaara"
+          },
+          "missionInfo": {
+            "Mission name": "The Beast Inside",
+            "Mission type": "B Rank Missions"
+          },
+          "requirements": "Rank: At least Missing-Nin",
+          "reward": "Shukaku Gaara",
+          "goals": [
+            {
+              "text": "Win 12 battles with Gaara Rehabilitated. (8/12)",
+              "isCompleted": false
+            },
+            {
+              "text": "Win 4 battles in a row with Gaara Rehabilitated. (0/4)",
+              "isCompleted": false
+            },
+            {
+              "text": "Use Gaara Rehabilitated's \"Quicksand Waterfall\" 10 times. (10/10)",
+              "isCompleted": true
+            }
+          ],
+          "images": {
+            "mission": {
+              "url": "https://i.imgur.com/xQNpJsZ.jpeg",
+              "file": "missions_out/images/b-rank-missions__the-beast-inside__mission__xQNpJsZ.jpeg"
+            },
+            "reward": {
+              "url": "https://i.imgur.com/bJHNRJ2.png",
+              "file": "missions_out/images/b-rank-missions__the-beast-inside__reward__bJHNRJ2.png"
+            }
+          },
+          "pageUrl": "https://www.naruto-arena.site/mission/the-beast-inside"
+        },
+        {
+          "id": "the-survivor-of-the-seal",
+          "title": "The Survivor of the Seal",
+          "section": "B Rank Missions",
+          "card": {
+            "imageUrl": "https://i.imgur.com/zO3NU9w.jpg",
+            "isAvailable": true,
+            "isLevelAvailable": true,
+            "isCompleted": true,
+            "rankRequirement": "Missing-Nin",
+            "levelRequirement": 16,
+            "completedRequeriments": [
+              {
+                "name": "Survival",
+                "color": "green"
+              }
+            ],
+            "unlockedCharacter": "Mitarashi Anko"
+          },
+          "missionInfo": {
+            "Mission name": "The Survivor of the Seal",
+            "Mission type": "B Rank Missions"
+          },
+          "requirements": "Rank: At least Missing-Nin",
+          "reward": "Mitarashi Anko",
+          "goals": [
+            {
+              "text": "Win 3 battles with any Ninja of the Team 7. (3/3)",
+              "isCompleted": true
+            },
+            {
+              "text": "Win 3 battles with any Ninja of the Team 8. (3/3)",
+              "isCompleted": true
+            },
+            {
+              "text": "Win 3 battles with any Ninja of the Team 9. (3/3)",
+              "isCompleted": true
+            },
+            {
+              "text": "Win 3 battles with any Ninja of the Team 10. (3/3)",
+              "isCompleted": true
+            },
+            {
+              "text": "Win 3 battles with any Ninja of the Sand Genin (Gaara/Gaara Rehabilitated, Kankuro, Temari). (3/3)",
+              "isCompleted": true
+            },
+            {
+              "text": "Win 3 battles with any Ninja of the Sound Genin (Dosu, Kin, Zaku). (3/3)",
+              "isCompleted": true
+            }
+          ],
+          "images": {
+            "mission": {
+              "url": "https://i.imgur.com/zO3NU9w.jpg",
+              "file": "missions_out/images/b-rank-missions__the-survivor-of-the-seal__mission__zO3NU9w.jpg"
+            },
+            "reward": {
+              "url": "https://i.imgur.com/q0YFcWg.png",
+              "file": "missions_out/images/b-rank-missions__the-survivor-of-the-seal__reward__q0YFcWg.png"
+            }
+          },
+          "pageUrl": "https://www.naruto-arena.site/mission/the-survivor-of-the-seal"
+        },
+        {
+          "id": "duty-of-a-sensei",
+          "title": "Duty of a Sensei",
+          "section": "B Rank Missions",
+          "card": {
+            "imageUrl": "https://i.imgur.com/ZYvPX2L.jpg",
+            "isAvailable": true,
+            "isLevelAvailable": true,
+            "isCompleted": true,
+            "rankRequirement": "Chuunin",
+            "levelRequirement": 11,
+            "completedRequeriments": [],
+            "unlockedCharacter": "Umino Iruka"
+          },
+          "missionInfo": {
+            "Mission name": "Duty of a Sensei",
+            "Mission type": "B Rank Missions"
+          },
+          "requirements": "Rank: At least Chuunin",
+          "reward": "Umino Iruka",
+          "goals": [
+            {
+              "text": "Win 2 battles with Uzumaki Naruto. (2/2)",
+              "isCompleted": true
+            },
+            {
+              "text": "Win 2 battles with Uchiha Sasuke. (2/2)",
+              "isCompleted": true
+            },
+            {
+              "text": "Win 2 battles with Haruno Sakura. (2/2)",
+              "isCompleted": true
+            },
+            {
+              "text": "Win 2 battles with Hyuuga Hinata. (2/2)",
+              "isCompleted": true
+            },
+            {
+              "text": "Win 2 battles with Aburame Shino. (2/2)",
+              "isCompleted": true
+            },
+            {
+              "text": "Win 2 battles with Inuzuka Kiba. (2/2)",
+              "isCompleted": true
+            },
+            {
+              "text": "Win 2 battles with Nara Shikamaru. (2/2)",
+              "isCompleted": true
+            },
+            {
+              "text": "Win 2 battles with Akimichi Chouji. (2/2)",
+              "isCompleted": true
+            },
+            {
+              "text": "Win 2 battles with Yamanaka Ino. (2/2)",
+              "isCompleted": true
+            }
+          ],
+          "images": {
+            "mission": {
+              "url": "https://i.imgur.com/ZYvPX2L.jpg",
+              "file": "missions_out/images/b-rank-missions__duty-of-a-sensei__mission__ZYvPX2L.jpg"
+            },
+            "reward": {
+              "url": "https://i.imgur.com/VFwEl8B.png",
+              "file": "missions_out/images/b-rank-missions__duty-of-a-sensei__reward__VFwEl8B.png"
+            }
+          },
+          "pageUrl": "https://www.naruto-arena.site/mission/duty-of-a-sensei"
+        },
+        {
+          "id": "mist-ascendant",
+          "title": "Mist Ascendant",
+          "section": "B Rank Missions",
+          "card": {
+            "imageUrl": "https://i.imgur.com/XkEM2l4.jpg",
+            "isAvailable": true,
+            "isLevelAvailable": true,
+            "isCompleted": false,
+            "rankRequirement": "Chuunin",
+            "levelRequirement": 11,
+            "completedRequeriments": [
+              {
+                "name": "Devotion",
+                "color": "green"
+              }
+            ],
+            "unlockedCharacter": "Demon Brothers"
+          },
+          "missionInfo": {
+            "Mission name": "Mist Ascendant",
+            "Mission type": "B Rank Missions"
+          },
+          "requirements": "Rank: At least Chuunin",
+          "reward": "Demon Brothers",
+          "goals": [
+            {
+              "text": "Win 4 battles in a row with Haku or Momochi Zabuza. (0/4)",
+              "isCompleted": false
+            }
+          ],
+          "images": {
+            "mission": {
+              "url": "https://i.imgur.com/XkEM2l4.jpg",
+              "file": "missions_out/images/b-rank-missions__mist-ascendant__mission__XkEM2l4.jpg"
+            },
+            "reward": {
+              "url": "https://i.imgur.com/rO5gKY6.png",
+              "file": "missions_out/images/b-rank-missions__mist-ascendant__reward__rO5gKY6.png"
+            }
+          },
+          "pageUrl": "https://www.naruto-arena.site/mission/mist-ascendant"
+        },
+        {
+          "id": "a-dishonored-shinobi",
+          "title": "A Dishonored Shinobi",
+          "section": "B Rank Missions",
+          "card": {
+            "imageUrl": "https://i.imgur.com/9GlXiaR.jpg",
+            "isAvailable": true,
+            "isLevelAvailable": true,
+            "isCompleted": false,
+            "rankRequirement": "Chuunin",
+            "levelRequirement": 11,
+            "completedRequeriments": [
+              {
+                "name": "Duty of a Sensei",
+                "color": "green"
+              }
+            ],
+            "unlockedCharacter": "Touji Mizuki"
+          },
+          "missionInfo": {
+            "Mission name": "A Dishonored Shinobi",
+            "Mission type": "B Rank Missions"
+          },
+          "requirements": "Rank: At least Chuunin",
+          "reward": "Touji Mizuki",
+          "goals": [
+            {
+              "text": "Win 8 battles with Uzumaki Naruto. (0/8)",
+              "isCompleted": false
+            },
+            {
+              "text": "Win 3 battles in a row with Umino Iruka. (0/3)",
+              "isCompleted": false
+            }
+          ],
+          "images": {
+            "mission": {
+              "url": "https://i.imgur.com/9GlXiaR.jpg",
+              "file": "missions_out/images/b-rank-missions__a-dishonored-shinobi__mission__9GlXiaR.jpg"
+            },
+            "reward": {
+              "url": "https://i.imgur.com/56OlIhi.png",
+              "file": "missions_out/images/b-rank-missions__a-dishonored-shinobi__reward__56OlIhi.png"
+            }
+          },
+          "pageUrl": "https://www.naruto-arena.site/mission/a-dishonored-shinobi"
+        }
+      ]
+    },
+    {
+      "id": "d-and-c-rank-missions",
+      "title": "D and C Rank Missions",
+      "description": "The D and C Rank Missions are assigned to new and unexperienced ninja. With these missions you are able to unlock notably the Sound ninja.",
+      "url": "https://www.naruto-arena.site/missions/d-and-c-rank-missions",
+      "image": {
+        "url": "https://i.imgur.com/pzM12f4.jpg",
+        "file": "missions_out/images/session__d-and-c-rank-missions__pzM12f4.jpg"
+      },
+      "missions": [
+        {
+          "id": "sasukes-quest-for-power",
+          "title": "Sasukes Quest for Power",
+          "section": "D and C Rank Missions",
+          "card": {
+            "imageUrl": "https://i.imgur.com/vzVbRv0.png",
+            "isAvailable": true,
+            "isLevelAvailable": true,
+            "isCompleted": true,
+            "rankRequirement": "Academy Student",
+            "levelRequirement": 1,
+            "completedRequeriments": [],
+            "unlockedCharacter": null
+          },
+          "missionInfo": {
+            "Mission name": "Sasukes Quest for Power",
+            "Mission type": "D and C Rank Missions"
+          },
+          "requirements": "Rank: At least Academy Student",
+          "reward": "",
+          "goals": [
+            {
+              "text": "Use Uchiha Sasuke's \"Chidori\" on an enemy affected by \"Sharingan\" 5 times. (5/5)",
+              "isCompleted": true
+            }
+          ],
+          "images": {
+            "mission": {
+              "url": "https://i.imgur.com/vzVbRv0.png",
+              "file": "missions_out/images/d-and-c-rank-missions__sasukes-quest-for-power__mission__vzVbRv0.png"
+            },
+            "reward": {
+              "url": "https://i.imgur.com/CQYJRRJ.png",
+              "file": "missions_out/images/d-and-c-rank-missions__sasukes-quest-for-power__reward__CQYJRRJ.png"
+            }
+          },
+          "pageUrl": "https://www.naruto-arena.site/mission/sasukes-quest-for-power"
+        },
+        {
+          "id": "the-search-for-jiroubou",
+          "title": "The Search for Jiroubou",
+          "section": "D and C Rank Missions",
+          "card": {
+            "imageUrl": "https://i.imgur.com/ReKFPdG.jpg",
+            "isAvailable": true,
+            "isLevelAvailable": true,
+            "isCompleted": true,
+            "rankRequirement": "Genin",
+            "levelRequirement": 6,
+            "completedRequeriments": [
+              {
+                "name": "Sasukes Quest for Power",
+                "color": "green"
+              }
+            ],
+            "unlockedCharacter": "Jiroubou"
+          },
+          "missionInfo": {
+            "Mission name": "The Search for Jiroubou",
+            "Mission type": "D and C Rank Missions"
+          },
+          "requirements": "Rank: At least Genin",
+          "reward": "Jiroubou",
+          "goals": [
+            {
+              "text": "Win 3 battles in a row with Akimichi Chouji. (3/3)",
+              "isCompleted": true
+            }
+          ],
+          "images": {
+            "mission": {
+              "url": "https://i.imgur.com/ReKFPdG.jpg",
+              "file": "missions_out/images/d-and-c-rank-missions__the-search-for-jiroubou__mission__ReKFPdG.jpg"
+            },
+            "reward": {
+              "url": "https://i.imgur.com/MuepMwr.png",
+              "file": "missions_out/images/d-and-c-rank-missions__the-search-for-jiroubou__reward__MuepMwr.png"
+            }
+          },
+          "pageUrl": "https://www.naruto-arena.site/mission/the-search-for-jiroubou"
+        },
+        {
+          "id": "the-search-for-kidoumaru",
+          "title": "The Search for Kidoumaru",
+          "section": "D and C Rank Missions",
+          "card": {
+            "imageUrl": "https://i.imgur.com/PlgonF6.jpg",
+            "isAvailable": true,
+            "isLevelAvailable": true,
+            "isCompleted": true,
+            "rankRequirement": "Genin",
+            "levelRequirement": 6,
+            "completedRequeriments": [
+              {
+                "name": "Sasukes Quest for Power",
+                "color": "green"
+              }
+            ],
+            "unlockedCharacter": "Kidoumaru"
+          },
+          "missionInfo": {
+            "Mission name": "The Search for Kidoumaru",
+            "Mission type": "D and C Rank Missions"
+          },
+          "requirements": "Rank: At least Genin",
+          "reward": "Kidoumaru",
+          "goals": [
+            {
+              "text": "Win 3 battles in a row with Hyuuga Neji. (3/3)",
+              "isCompleted": true
+            }
+          ],
+          "images": {
+            "mission": {
+              "url": "https://i.imgur.com/PlgonF6.jpg",
+              "file": "missions_out/images/d-and-c-rank-missions__the-search-for-kidoumaru__mission__PlgonF6.jpg"
+            },
+            "reward": {
+              "url": "https://i.imgur.com/ZSWwJiY.png",
+              "file": "missions_out/images/d-and-c-rank-missions__the-search-for-kidoumaru__reward__ZSWwJiY.png"
+            }
+          },
+          "pageUrl": "https://www.naruto-arena.site/mission/the-search-for-kidoumaru"
+        },
+        {
+          "id": "the-search-for-tayuya",
+          "title": "The Search for Tayuya",
+          "section": "D and C Rank Missions",
+          "card": {
+            "imageUrl": "https://i.imgur.com/RAREgJy.jpg",
+            "isAvailable": true,
+            "isLevelAvailable": true,
+            "isCompleted": true,
+            "rankRequirement": "Genin",
+            "levelRequirement": 6,
+            "completedRequeriments": [
+              {
+                "name": "Sasukes Quest for Power",
+                "color": "green"
+              }
+            ],
+            "unlockedCharacter": "Tayuya"
+          },
+          "missionInfo": {
+            "Mission name": "The Search for Tayuya",
+            "Mission type": "D and C Rank Missions"
+          },
+          "requirements": "Rank: At least Genin",
+          "reward": "Tayuya",
+          "goals": [
+            {
+              "text": "Win 3 battles in a row with Nara Shikamaru or Temari. (3/3)",
+              "isCompleted": true
+            }
+          ],
+          "images": {
+            "mission": {
+              "url": "https://i.imgur.com/RAREgJy.jpg",
+              "file": "missions_out/images/d-and-c-rank-missions__the-search-for-tayuya__mission__RAREgJy.jpg"
+            },
+            "reward": {
+              "url": "https://i.imgur.com/ZkTTfAq.png",
+              "file": "missions_out/images/d-and-c-rank-missions__the-search-for-tayuya__reward__ZkTTfAq.png"
+            }
+          },
+          "pageUrl": "https://www.naruto-arena.site/mission/the-search-for-tayuya"
+        },
+        {
+          "id": "the-search-for-sakon",
+          "title": "The Search for Sakon",
+          "section": "D and C Rank Missions",
+          "card": {
+            "imageUrl": "https://i.imgur.com/yYoByVg.jpg",
+            "isAvailable": true,
+            "isLevelAvailable": true,
+            "isCompleted": true,
+            "rankRequirement": "Genin",
+            "levelRequirement": 6,
+            "completedRequeriments": [
+              {
+                "name": "Sasukes Quest for Power",
+                "color": "green"
+              }
+            ],
+            "unlockedCharacter": "Sakon"
+          },
+          "missionInfo": {
+            "Mission name": "The Search for Sakon",
+            "Mission type": "D and C Rank Missions"
+          },
+          "requirements": "Rank: At least Genin",
+          "reward": "Sakon",
+          "goals": [
+            {
+              "text": "Win 3 battles in a row with Inuzuka Kiba or Kankuro. (3/3)",
+              "isCompleted": true
+            }
+          ],
+          "images": {
+            "mission": {
+              "url": "https://i.imgur.com/yYoByVg.jpg",
+              "file": "missions_out/images/d-and-c-rank-missions__the-search-for-sakon__mission__yYoByVg.jpg"
+            },
+            "reward": {
+              "url": "https://i.imgur.com/fXMOzMv.png",
+              "file": "missions_out/images/d-and-c-rank-missions__the-search-for-sakon__reward__fXMOzMv.png"
+            }
+          },
+          "pageUrl": "https://www.naruto-arena.site/mission/the-search-for-sakon"
+        },
+        {
+          "id": "a-new-found-skin",
+          "title": "A New-Found Skin",
+          "section": "D and C Rank Missions",
+          "card": {
+            "imageUrl": "https://i.imgur.com/U4wMean.png",
+            "isAvailable": true,
+            "isLevelAvailable": true,
+            "isCompleted": false,
+            "rankRequirement": "Chuunin",
+            "levelRequirement": 11,
+            "completedRequeriments": [],
+            "unlockedCharacter": "Shiore Orochimaru"
+          },
+          "missionInfo": {
+            "Mission name": "A New-Found Skin",
+            "Mission type": "D and C Rank Missions"
+          },
+          "requirements": "Rank: At least Chuunin",
+          "reward": "Shiore Orochimaru",
+          "goals": [
+            {
+              "text": "Win 15 battles with Kinuta Dosu. (0/15)",
+              "isCompleted": false
+            },
+            {
+              "text": "Win 15 battles with Abumi Zaku. (3/15)",
+              "isCompleted": false
+            },
+            {
+              "text": "Win 15 battles with Tsuchi Kin. (12/15)",
+              "isCompleted": false
+            }
+          ],
+          "images": {
+            "mission": {
+              "url": "https://i.imgur.com/U4wMean.png",
+              "file": "missions_out/images/d-and-c-rank-missions__a-new-found-skin__mission__U4wMean.png"
+            },
+            "reward": {
+              "url": "https://i.imgur.com/AzUvWCt.png",
+              "file": "missions_out/images/d-and-c-rank-missions__a-new-found-skin__reward__AzUvWCt.png"
+            }
+          },
+          "pageUrl": "https://www.naruto-arena.site/mission/a-new-found-skin"
+        },
+        {
+          "id": "descent-into-darkness",
+          "title": "Descent into Darkness",
+          "section": "D and C Rank Missions",
+          "card": {
+            "imageUrl": "https://i.imgur.com/MOHHjog.jpg",
+            "isAvailable": true,
+            "isLevelAvailable": true,
+            "isCompleted": true,
+            "rankRequirement": "Chuunin",
+            "levelRequirement": 11,
+            "completedRequeriments": [
+              {
+                "name": "The Search for Jiroubou",
+                "color": "green"
+              },
+              {
+                "name": "The Search for Kidoumaru",
+                "color": "green"
+              },
+              {
+                "name": "The Search for Tayuya",
+                "color": "green"
+              },
+              {
+                "name": "The Search for Sakon",
+                "color": "green"
+              }
+            ],
+            "unlockedCharacter": "Cursed Seal Sasuke"
+          },
+          "missionInfo": {
+            "Mission name": "Descent into Darkness",
+            "Mission type": "D and C Rank Missions"
+          },
+          "requirements": "Rank: At least Chuunin",
+          "reward": "Cursed Seal Sasuke",
+          "goals": [
+            {
+              "text": "Win 2 battles in a row with Uzumaki Naruto. (2/2)",
+              "isCompleted": true
+            },
+            {
+              "text": "Win 4 battles in a row with Uchiha Sasuke. (4/4)",
+              "isCompleted": true
+            },
+            {
+              "text": "Win 10 battles with Uchiha Sasuke. (10/10)",
+              "isCompleted": true
+            }
+          ],
+          "images": {
+            "mission": {
+              "url": "https://i.imgur.com/MOHHjog.jpg",
+              "file": "missions_out/images/d-and-c-rank-missions__descent-into-darkness__mission__MOHHjog.jpg"
+            },
+            "reward": {
+              "url": "https://i.imgur.com/r4RPyUj.png",
+              "file": "missions_out/images/d-and-c-rank-missions__descent-into-darkness__reward__r4RPyUj.png"
+            }
+          },
+          "pageUrl": "https://www.naruto-arena.site/mission/descent-into-darkness"
+        },
+        {
+          "id": "the-redemption-of-gaara",
+          "title": "The Redemption of Gaara",
+          "section": "D and C Rank Missions",
+          "card": {
+            "imageUrl": "https://i.imgur.com/rtn4dsy.jpg",
+            "isAvailable": true,
+            "isLevelAvailable": true,
+            "isCompleted": true,
+            "rankRequirement": "Chuunin",
+            "levelRequirement": 11,
+            "completedRequeriments": [
+              {
+                "name": "Descent into Darkness",
+                "color": "green"
+              }
+            ],
+            "unlockedCharacter": "Gaara Rehabilitated"
+          },
+          "missionInfo": {
+            "Mission name": "The Redemption of Gaara",
+            "Mission type": "D and C Rank Missions"
+          },
+          "requirements": "Rank: At least Chuunin",
+          "reward": "Gaara Rehabilitated",
+          "goals": [
+            {
+              "text": "Win 2 battles in a row with Rock Lee. (2/2)",
+              "isCompleted": true
+            },
+            {
+              "text": "Win 4 battles in a row with Gaara of the Desert. (4/4)",
+              "isCompleted": true
+            },
+            {
+              "text": "Win 10 battles with Gaara of the Desert. (10/10)",
+              "isCompleted": true
+            }
+          ],
+          "images": {
+            "mission": {
+              "url": "https://i.imgur.com/rtn4dsy.jpg",
+              "file": "missions_out/images/d-and-c-rank-missions__the-redemption-of-gaara__mission__rtn4dsy.jpg"
+            },
+            "reward": {
+              "url": "https://i.imgur.com/tV82AF4.png",
+              "file": "missions_out/images/d-and-c-rank-missions__the-redemption-of-gaara__reward__tV82AF4.png"
+            }
+          },
+          "pageUrl": "https://www.naruto-arena.site/mission/the-redemption-of-gaara"
+        },
+        {
+          "id": "the-sounds-amongst-the-leaves",
+          "title": "The Sounds Amongst the Leaves",
+          "section": "D and C Rank Missions",
+          "card": {
+            "imageUrl": "https://i.imgur.com/utvYcfq.jpg",
+            "isAvailable": true,
+            "isLevelAvailable": true,
+            "isCompleted": true,
+            "rankRequirement": "Genin",
+            "levelRequirement": 6,
+            "completedRequeriments": [],
+            "unlockedCharacter": "Akadou Yoroi"
+          },
+          "missionInfo": {
+            "Mission name": "The Sounds Amongst the Leaves",
+            "Mission type": "D and C Rank Missions"
+          },
+          "requirements": "Rank: At least Genin",
+          "reward": "Akadou Yoroi",
+          "goals": [
+            {
+              "text": "Win 3 battles in a row with any Ninja of the Sound Genin (Dosu, Kin, Zaku). (3/3)",
+              "isCompleted": true
+            }
+          ],
+          "images": {
+            "mission": {
+              "url": "https://i.imgur.com/utvYcfq.jpg",
+              "file": "missions_out/images/d-and-c-rank-missions__the-sounds-amongst-the-leaves__mission__utvYcfq.jpg"
+            },
+            "reward": {
+              "url": "https://i.imgur.com/ZqpOP0D.png",
+              "file": "missions_out/images/d-and-c-rank-missions__the-sounds-amongst-the-leaves__reward__ZqpOP0D.png"
+            }
+          },
+          "pageUrl": "https://www.naruto-arena.site/mission/the-sounds-amongst-the-leaves"
+        },
+        {
+          "id": "twisting-sound",
+          "title": "Twisting Sound",
+          "section": "D and C Rank Missions",
+          "card": {
+            "imageUrl": "https://i.imgur.com/TRERBfs.jpeg",
+            "isAvailable": true,
+            "isLevelAvailable": true,
+            "isCompleted": true,
+            "rankRequirement": "Genin",
+            "levelRequirement": 6,
+            "completedRequeriments": [],
+            "unlockedCharacter": "Tsurugi Misumi"
+          },
+          "missionInfo": {
+            "Mission name": "Twisting Sound",
+            "Mission type": "D and C Rank Missions"
+          },
+          "requirements": "Rank: At least Genin",
+          "reward": "Tsurugi Misumi",
+          "goals": [
+            {
+              "text": "Win 3 battles in a row with Kankuro. (3/3)",
+              "isCompleted": true
+            }
+          ],
+          "images": {
+            "mission": {
+              "url": "https://i.imgur.com/TRERBfs.jpeg",
+              "file": "missions_out/images/d-and-c-rank-missions__twisting-sound__mission__TRERBfs.jpeg"
+            },
+            "reward": {
+              "url": "https://i.imgur.com/M8EPY4F.png",
+              "file": "missions_out/images/d-and-c-rank-missions__twisting-sound__reward__M8EPY4F.png"
+            }
+          },
+          "pageUrl": "https://www.naruto-arena.site/mission/twisting-sound"
+        },
+        {
+          "id": "a-rare-opportunity",
+          "title": "A Rare Opportunity",
+          "section": "D and C Rank Missions",
+          "card": {
+            "imageUrl": "https://i.imgur.com/QaWdQbS.jpg",
+            "isAvailable": true,
+            "isLevelAvailable": true,
+            "isCompleted": false,
+            "rankRequirement": "Genin",
+            "levelRequirement": 6,
+            "completedRequeriments": [
+              {
+                "name": "The Sounds Amongst the Leaves",
+                "color": "green"
+              }
+            ],
+            "unlockedCharacter": "Shigure"
+          },
+          "missionInfo": {
+            "Mission name": "A Rare Opportunity",
+            "Mission type": "D and C Rank Missions"
+          },
+          "requirements": "Rank: At least Genin",
+          "reward": "Shigure",
+          "goals": [
+            {
+              "text": "Win 3 battles in a row with Hyuuga Hinata. (0/3)",
+              "isCompleted": false
+            },
+            {
+              "text": "Win 3 battles in a row with Aburame Shino. (1/3)",
+              "isCompleted": false
+            },
+            {
+              "text": "Win 3 battles in a row with Inuzuka Kiba. (0/3)",
+              "isCompleted": false
+            }
+          ],
+          "images": {
+            "mission": {
+              "url": "https://i.imgur.com/QaWdQbS.jpg",
+              "file": "missions_out/images/d-and-c-rank-missions__a-rare-opportunity__mission__QaWdQbS.jpg"
+            },
+            "reward": {
+              "url": "https://i.imgur.com/lLYJBpS.png",
+              "file": "missions_out/images/d-and-c-rank-missions__a-rare-opportunity__reward__lLYJBpS.png"
+            }
+          },
+          "pageUrl": "https://www.naruto-arena.site/mission/a-rare-opportunity"
+        }
+      ]
+    },
+    {
+      "id": "five-kage-summit-missions",
+      "title": "Five Kage Summit Missions",
+      "description": "The five kages are reunited to discuss how to deal with Akatsuki. With these missions you are able to unlock ninjas that participated in Five Kage Summit Arc.",
+      "url": "https://www.naruto-arena.site/missions/five-kage-summit-missions",
+      "image": {
+        "url": "https://i.imgur.com/refQumz.png",
+        "file": "missions_out/images/session__five-kage-summit-missions__refQumz.png"
+      },
+      "missions": []
+    },
+    {
+      "id": "fourth-shinobi-world-war-pt-1-missions",
+      "title": "Fourth Shinobi World War Pt. 1 Missions",
+      "description": "Tobi declared war against the five Kages and the leader of the Land of Iron. With these missions you are able to unlock ninjas that participated in the beginning of Fourth Shinobi World War.",
+      "url": "https://www.naruto-arena.site/missions/fourth-shinobi-world-war-pt.-1-missions",
+      "image": {
+        "url": "https://i.imgur.com/zryb1GZ.png",
+        "file": "missions_out/images/session__fourth-shinobi-world-war-pt-1-missions__zryb1GZ.png"
+      },
+      "missions": [
+        {
+          "id": "the-child-of-rain",
+          "title": "The Child of Rain",
+          "section": "Fourth Shinobi World War Pt. 1 Missions",
+          "card": {
+            "imageUrl": "https://i.imgur.com/2PeA5Uw.png",
+            "isAvailable": true,
+            "isLevelAvailable": true,
+            "isCompleted": false,
+            "rankRequirement": "Chuunin",
+            "levelRequirement": 11,
+            "completedRequeriments": [],
+            "unlockedCharacter": "Edo Tensei Yota (S)"
+          },
+          "missionInfo": {
+            "Mission name": "The Child of Rain",
+            "Mission type": "Fourth Shinobi World War Pt. 1 Missions"
+          },
+          "requirements": "Rank: At least Chuunin",
+          "reward": "Edo Tensei Yota (S)",
+          "goals": [
+            {
+              "text": "Win 15 battles with Uzumaki Naruto. (15/15)",
+              "isCompleted": true
+            },
+            {
+              "text": "Win 3 battles in a row with Uzumaki Naruto. (3/3)",
+              "isCompleted": true
+            },
+            {
+              "text": "Win 15 battles with Haruno Sakura. (15/15)",
+              "isCompleted": true
+            },
+            {
+              "text": "Win 3 battles in a row with Haruno Sakura. (3/3)",
+              "isCompleted": true
+            },
+            {
+              "text": "Win 15 battles with Nara Shikamaru. (15/15)",
+              "isCompleted": true
+            },
+            {
+              "text": "Win 3 battles in a row with Nara Shikamaru. (3/3)",
+              "isCompleted": true
+            },
+            {
+              "text": "Win 15 battles with Akimichi Chouji. (3/15)",
+              "isCompleted": false
+            },
+            {
+              "text": "Win 3 battles in a row with Akimichi Chouji. (3/3)",
+              "isCompleted": true
+            },
+            {
+              "text": "Win 15 battles with Yamanaka Ino. (15/15)",
+              "isCompleted": true
+            },
+            {
+              "text": "Win 3 battles in a row with Yamanaka Ino. (3/3)",
+              "isCompleted": true
+            },
+            {
+              "text": "Win 15 battles with Inuzuka Kiba. (13/15)",
+              "isCompleted": false
+            },
+            {
+              "text": "Win 3 battles in a row with Inuzuka Kiba. (0/3)",
+              "isCompleted": false
+            }
+          ],
+          "images": {
+            "mission": {
+              "url": "https://i.imgur.com/2PeA5Uw.png",
+              "file": "missions_out/images/fourth-shinobi-world-war-pt-1-missions__the-child-of-rain__mission__2PeA5Uw.png"
+            },
+            "reward": {
+              "url": "https://i.imgur.com/CgXEKRN.png",
+              "file": "missions_out/images/fourth-shinobi-world-war-pt-1-missions__the-child-of-rain__reward__CgXEKRN.png"
+            }
+          },
+          "pageUrl": "https://www.naruto-arena.site/mission/the-child-of-rain"
+        }
+      ]
+    },
+    {
+      "id": "s-rank-missions",
+      "title": "S Rank Missions",
+      "description": "The S Rank Missions are only assigned to the best of the best. With these missions you are able to unlock legendary ninja and hokages.",
+      "url": "https://www.naruto-arena.site/missions/s-rank-missions",
+      "image": {
+        "url": "https://i.imgur.com/0qocov9.jpg",
+        "file": "missions_out/images/session__s-rank-missions__0qocov9.jpg"
+      },
+      "missions": []
+    },
+    {
+      "id": "shippuuden-missions",
+      "title": "Shippuuden Missions",
+      "description": "The Shippuuden Missions are the newest missions in town! With these missions you are able to unlock many new characters and upgrades to existing characters.",
+      "url": "https://www.naruto-arena.site/missions/shippuuden-missions",
+      "image": {
+        "url": "https://i.imgur.com/3Acd9W2.jpg",
+        "file": "missions_out/images/session__shippuuden-missions__3Acd9W2.jpg"
+      },
+      "missions": [
+        {
+          "id": "the-prodigal-son-returns",
+          "title": "The Prodigal Son Returns",
+          "section": "Shippuuden Missions",
+          "card": {
+            "imageUrl": "https://i.imgur.com/jgOMFXH.jpg",
+            "isAvailable": true,
+            "isLevelAvailable": true,
+            "isCompleted": true,
+            "rankRequirement": "Genin",
+            "levelRequirement": 6,
+            "completedRequeriments": [],
+            "unlockedCharacter": "Uzumaki Naruto (S)"
+          },
+          "missionInfo": {
+            "Mission name": "The Prodigal Son Returns",
+            "Mission type": "Shippuuden Missions"
+          },
+          "requirements": "Rank: At least Genin",
+          "reward": "Uzumaki Naruto (S)",
+          "goals": [
+            {
+              "text": "Win 2 battles in a row with Uzumaki Naruto. (2/2)",
+              "isCompleted": true
+            },
+            {
+              "text": "Win 6 battles with Uzumaki Naruto. (6/6)",
+              "isCompleted": true
+            }
+          ],
+          "images": {
+            "mission": {
+              "url": "https://i.imgur.com/jgOMFXH.jpg",
+              "file": "missions_out/images/shippuuden-missions__the-prodigal-son-returns__mission__jgOMFXH.jpg"
+            },
+            "reward": {
+              "url": "https://i.imgur.com/ksOuPJi.png",
+              "file": "missions_out/images/shippuuden-missions__the-prodigal-son-returns__reward__ksOuPJi.png"
+            }
+          },
+          "pageUrl": "https://www.naruto-arena.site/mission/the-prodigal-son-returns"
+        },
+        {
+          "id": "a-girl-grown-up",
+          "title": "A Girl Grown Up",
+          "section": "Shippuuden Missions",
+          "card": {
+            "imageUrl": "https://i.imgur.com/p622DKI.jpeg",
+            "isAvailable": true,
+            "isLevelAvailable": true,
+            "isCompleted": true,
+            "rankRequirement": "Genin",
+            "levelRequirement": 6,
+            "completedRequeriments": [
+              {
+                "name": "The Prodigal Son Returns",
+                "color": "green"
+              }
+            ],
+            "unlockedCharacter": "Haruno Sakura (S)"
+          },
+          "missionInfo": {
+            "Mission name": "A Girl Grown Up",
+            "Mission type": "Shippuuden Missions"
+          },
+          "requirements": "Rank: At least Genin",
+          "reward": "Haruno Sakura (S)",
+          "goals": [
+            {
+              "text": "Win 3 battles in a row with Haruno Sakura. (3/3)",
+              "isCompleted": true
+            },
+            {
+              "text": "Win 10 battles with Haruno Sakura. (10/10)",
+              "isCompleted": true
+            }
+          ],
+          "images": {
+            "mission": {
+              "url": "https://i.imgur.com/p622DKI.jpeg",
+              "file": "missions_out/images/shippuuden-missions__a-girl-grown-up__mission__p622DKI.jpeg"
+            },
+            "reward": {
+              "url": "https://i.imgur.com/5iC4YJR.png",
+              "file": "missions_out/images/shippuuden-missions__a-girl-grown-up__reward__5iC4YJR.png"
+            }
+          },
+          "pageUrl": "https://www.naruto-arena.site/mission/a-girl-grown-up"
+        },
+        {
+          "id": "a-genius-of-hard-work",
+          "title": "A Genius of Hard Work",
+          "section": "Shippuuden Missions",
+          "card": {
+            "imageUrl": "https://i.imgur.com/L8EEhnY.jpg",
+            "isAvailable": true,
+            "isLevelAvailable": true,
+            "isCompleted": true,
+            "rankRequirement": "Chuunin",
+            "levelRequirement": 11,
+            "completedRequeriments": [],
+            "unlockedCharacter": "Rock Lee (S)"
+          },
+          "missionInfo": {
+            "Mission name": "A Genius of Hard Work",
+            "Mission type": "Shippuuden Missions"
+          },
+          "requirements": "Rank: At least Chuunin",
+          "reward": "Rock Lee (S)",
+          "goals": [
+            {
+              "text": "Win 3 battles in a row with Rock Lee. (3/3)",
+              "isCompleted": true
+            },
+            {
+              "text": "Win 10 battles with Rock Lee. (10/10)",
+              "isCompleted": true
+            }
+          ],
+          "images": {
+            "mission": {
+              "url": "https://i.imgur.com/L8EEhnY.jpg",
+              "file": "missions_out/images/shippuuden-missions__a-genius-of-hard-work__mission__L8EEhnY.jpg"
+            },
+            "reward": {
+              "url": "https://i.imgur.com/DTqDmu4.png",
+              "file": "missions_out/images/shippuuden-missions__a-genius-of-hard-work__reward__DTqDmu4.png"
+            }
+          },
+          "pageUrl": "https://www.naruto-arena.site/mission/a-genius-of-hard-work"
+        },
+        {
+          "id": "a-genius-of-ranged-combat",
+          "title": "A Genius of Ranged Combat",
+          "section": "Shippuuden Missions",
+          "card": {
+            "imageUrl": "https://i.imgur.com/CGoSy5u.jpg",
+            "isAvailable": true,
+            "isLevelAvailable": true,
+            "isCompleted": true,
+            "rankRequirement": "Chuunin",
+            "levelRequirement": 11,
+            "completedRequeriments": [],
+            "unlockedCharacter": "Tenten (S)"
+          },
+          "missionInfo": {
+            "Mission name": "A Genius of Ranged Combat",
+            "Mission type": "Shippuuden Missions"
+          },
+          "requirements": "Rank: At least Chuunin",
+          "reward": "Tenten (S)",
+          "goals": [
+            {
+              "text": "Win 3 battles in a row with Tenten. (3/3)",
+              "isCompleted": true
+            },
+            {
+              "text": "Win 10 battles with Tenten. (10/10)",
+              "isCompleted": true
+            }
+          ],
+          "images": {
+            "mission": {
+              "url": "https://i.imgur.com/CGoSy5u.jpg",
+              "file": "missions_out/images/shippuuden-missions__a-genius-of-ranged-combat__mission__CGoSy5u.jpg"
+            },
+            "reward": {
+              "url": "https://i.imgur.com/lFtTPeQ.png",
+              "file": "missions_out/images/shippuuden-missions__a-genius-of-ranged-combat__reward__lFtTPeQ.png"
+            }
+          },
+          "pageUrl": "https://www.naruto-arena.site/mission/a-genius-of-ranged-combat"
+        },
+        {
+          "id": "pride-of-the-hyuuga",
+          "title": "Pride of the Hyuuga",
+          "section": "Shippuuden Missions",
+          "card": {
+            "imageUrl": "https://i.imgur.com/pvw1p4Q.jpg",
+            "isAvailable": true,
+            "isLevelAvailable": true,
+            "isCompleted": false,
+            "rankRequirement": "Missing-Nin",
+            "levelRequirement": 16,
+            "completedRequeriments": [],
+            "unlockedCharacter": "Hyuuga Neji (S)"
+          },
+          "missionInfo": {
+            "Mission name": "Pride of the Hyuuga",
+            "Mission type": "Shippuuden Missions"
+          },
+          "requirements": "Rank: At least Missing-Nin",
+          "reward": "Hyuuga Neji (S)",
+          "goals": [
+            {
+              "text": "Win 3 battles in a row with Hyuuga Neji. (3/3)",
+              "isCompleted": true
+            },
+            {
+              "text": "Win 13 battles with Hyuuga Neji. (11/13)",
+              "isCompleted": false
+            }
+          ],
+          "images": {
+            "mission": {
+              "url": "https://i.imgur.com/pvw1p4Q.jpg",
+              "file": "missions_out/images/shippuuden-missions__pride-of-the-hyuuga__mission__pvw1p4Q.jpg"
+            },
+            "reward": {
+              "url": "https://i.imgur.com/L3PYgA9.png",
+              "file": "missions_out/images/shippuuden-missions__pride-of-the-hyuuga__reward__L3PYgA9.png"
+            }
+          },
+          "pageUrl": "https://www.naruto-arena.site/mission/pride-of-the-hyuuga"
+        },
+        {
+          "id": "where-the-shadows-lie",
+          "title": "Where the Shadows Lie",
+          "section": "Shippuuden Missions",
+          "card": {
+            "imageUrl": "https://i.imgur.com/kqrbOVl.jpg",
+            "isAvailable": true,
+            "isLevelAvailable": true,
+            "isCompleted": true,
+            "rankRequirement": "Chuunin",
+            "levelRequirement": 11,
+            "completedRequeriments": [
+              {
+                "name": "The Prodigal Son Returns",
+                "color": "green"
+              },
+              {
+                "name": "A Genius of Hard Work",
+                "color": "green"
+              }
+            ],
+            "unlockedCharacter": "Nara Shikamaru (S)"
+          },
+          "missionInfo": {
+            "Mission name": "Where the Shadows Lie",
+            "Mission type": "Shippuuden Missions"
+          },
+          "requirements": "Rank: At least Chuunin",
+          "reward": "Nara Shikamaru (S)",
+          "goals": [
+            {
+              "text": "Win 3 battles in a row with Nara Shikamaru. (3/3)",
+              "isCompleted": true
+            },
+            {
+              "text": "Win 10 battles with Nara Shikamaru. (10/10)",
+              "isCompleted": true
+            }
+          ],
+          "images": {
+            "mission": {
+              "url": "https://i.imgur.com/kqrbOVl.jpg",
+              "file": "missions_out/images/shippuuden-missions__where-the-shadows-lie__mission__kqrbOVl.jpg"
+            },
+            "reward": {
+              "url": "https://i.imgur.com/DJ6gLqt.png",
+              "file": "missions_out/images/shippuuden-missions__where-the-shadows-lie__reward__DJ6gLqt.png"
+            }
+          },
+          "pageUrl": "https://www.naruto-arena.site/mission/where-the-shadows-lie"
+        },
+        {
+          "id": "coming-out-of-retirement",
+          "title": "Coming Out of Retirement",
+          "section": "Shippuuden Missions",
+          "card": {
+            "imageUrl": "https://i.imgur.com/G1nzf3k.jpg",
+            "isAvailable": true,
+            "isLevelAvailable": true,
+            "isCompleted": true,
+            "rankRequirement": "Missing-Nin",
+            "levelRequirement": 16,
+            "completedRequeriments": [],
+            "unlockedCharacter": "Chiyo (S)"
+          },
+          "missionInfo": {
+            "Mission name": "Coming Out of Retirement",
+            "Mission type": "Shippuuden Missions"
+          },
+          "requirements": "Rank: At least Missing-Nin",
+          "reward": "Chiyo (S)",
+          "goals": [
+            {
+              "text": "Win 22 battles with any Ninja of the Sand Village. (22/22)",
+              "isCompleted": true
+            }
+          ],
+          "images": {
+            "mission": {
+              "url": "https://i.imgur.com/G1nzf3k.jpg",
+              "file": "missions_out/images/shippuuden-missions__coming-out-of-retirement__mission__G1nzf3k.jpg"
+            },
+            "reward": {
+              "url": "https://i.imgur.com/Xwi4eLx.png",
+              "file": "missions_out/images/shippuuden-missions__coming-out-of-retirement__reward__Xwi4eLx.png"
+            }
+          },
+          "pageUrl": "https://www.naruto-arena.site/mission/coming-out-of-retirement"
+        }
+      ]
+    },
+    {
+      "id": "tales-missions",
+      "title": "Tales Missions",
+      "description": "With the Tales Mission, you are able to unlock ninjas that participated in past events.",
+      "url": "https://www.naruto-arena.site/missions/tales-missions",
+      "image": {
+        "url": "https://i.imgur.com/NUOsfqD.png",
+        "file": "missions_out/images/session__tales-missions__NUOsfqD.png"
+      },
+      "missions": [
+        {
+          "id": "the-adored-elder-sister",
+          "title": "The Adored Elder Sister",
+          "section": "Tales Missions",
+          "card": {
+            "imageUrl": "https://i.imgur.com/SG8qAug.png",
+            "isAvailable": true,
+            "isLevelAvailable": true,
+            "isCompleted": true,
+            "rankRequirement": "Academy Student",
+            "levelRequirement": 1,
+            "completedRequeriments": [],
+            "unlockedCharacter": "Hyuuga Hanabi"
+          },
+          "missionInfo": {
+            "Mission name": "The Adored Elder Sister",
+            "Mission type": "Tales Missions"
+          },
+          "requirements": "Rank: At least Academy Student",
+          "reward": "Hyuuga Hanabi",
+          "goals": [
+            {
+              "text": "Use Hyuuga Neji's \"Gentle Fist\" 8 times. (8/8)",
+              "isCompleted": true
+            },
+            {
+              "text": "Use Hyuuga Hinata's \"Gentle Fist\" 8 times. (8/8)",
+              "isCompleted": true
+            }
+          ],
+          "images": {
+            "mission": {
+              "url": "https://i.imgur.com/SG8qAug.png",
+              "file": "missions_out/images/tales-missions__the-adored-elder-sister__mission__SG8qAug.png"
+            },
+            "reward": {
+              "url": "https://i.imgur.com/ovkEczm.jpg",
+              "file": "missions_out/images/tales-missions__the-adored-elder-sister__reward__ovkEczm.jpg"
+            }
+          },
+          "pageUrl": "https://www.naruto-arena.site/mission/the-adored-elder-sister"
+        }
+      ]
+    }
+  ]
+}
