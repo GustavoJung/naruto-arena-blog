@@ -18,7 +18,7 @@
     padding: var(--spacing-lg);
     box-shadow: var(--shadow-md);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    width: 350px;
+    width: 400px;
     flex-shrink: 0;
     position: relative;
 }
@@ -47,7 +47,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
-    margin-top: -8px;
+    margin-top: 8px;
 }
 
 .teamTag {
@@ -130,8 +130,8 @@
 }
 
 .avatar {
-    width: 48px;
-    height: 48px;
+    width: 62px;
+    height: 62px;
     border-radius: 16px;
     background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
     display: flex;

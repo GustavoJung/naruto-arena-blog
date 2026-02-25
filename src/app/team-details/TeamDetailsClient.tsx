@@ -6,6 +6,7 @@ import { getChakraTypes, translateUI, getCharacterImageUrl, handleCharacterImage
 import { ALL_DETAILED_MISSIONS } from '@/lib/missions';
 import styles from './page.module.css';
 import { ThumbsUp, Calendar, ArrowLeft, Swords, Trophy } from 'lucide-react';
+import FormattedStrategy from '@/components/FormattedStrategy';
 
 export default function TeamDetailsClient({ id }: { id: string }) {
     const router = useRouter();
@@ -101,7 +102,7 @@ export default function TeamDetailsClient({ id }: { id: string }) {
                 <div className={styles.strategySection}>
                     <h2 className={styles.sectionTitle}>Estratégia de Batalha</h2>
                     <div className={styles.strategyContent}>
-                        {team.description}
+                        <FormattedStrategy text={team.description} characters={team.characters} />
                     </div>
                 </div>
 

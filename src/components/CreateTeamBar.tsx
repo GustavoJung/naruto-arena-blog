@@ -264,6 +264,7 @@ export default function CreateTeamBar() {
                     />
                     <div className={styles.charCount}>
                         {description.length}/{MAX_DESC_LENGTH}
+                        <span className={styles.hintInline}>&nbsp;💡 Use <code>[Nome da Habilidade]</code> para tooltips interativos, ex: <code>[Shadow Clones]</code></span>
                     </div>
                 </div>
 

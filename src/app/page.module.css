@@ -102,3 +102,58 @@
     gap: var(--spacing-md);
   }
 }
+
+.emptyState {
+  grid-column: 1 / -1;
+  /* ocupa todo grid */
+  width: 100%;
+  min-height: 320px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  gap: 8px;
+
+  padding: 40px 20px;
+  opacity: 0.9;
+}
+
+.emptyImage {
+  width: 500px;
+  max-width: 80%;
+  height: auto;
+  object-fit: contain;
+  opacity: 0.85;
+  border: 1px solid black;
+}
+
+.emptyTitle {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: white;
+}
+
+.emptyDescription {
+  font-size: 1.2rem;
+  color: #cfcfcf;
+  max-width: 420px;
+}
+
+.emptyState {
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 0.9;
+    transform: translateY(0);
+  }
+}

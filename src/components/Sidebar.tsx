@@ -9,7 +9,7 @@ import styles from './Sidebar.module.css';
 
 const MENU_ITEMS = [
     { name: 'Início', path: '/home', icon: Home },
-    { name: 'Times', path: '/', icon: LayoutDashboard },
+    { name: 'Times', path: '/teams', icon: LayoutDashboard },
     { name: 'Personagens', path: '/characters', icon: Users },
     { name: 'Missões', path: '/missions', icon: ScrollText },
     { name: 'Jogue agora', path: 'https://www.naruto-arena.site/', icon: Swords }
@@ -35,7 +35,7 @@ export default function Sidebar() {
                     <nav className={styles.nav}>
                         {MENU_ITEMS.map((item) => {
                             const Icon = item.icon;
-                            const isActive = pathname === item.path || (item.path !== '/' && pathname.startsWith(item.path));
+                            const isActive = pathname === item.path || (item.path === '/home' && pathname === '/') || (item.path !== '/home' && item.path !== '/' && pathname.startsWith(item.path));
                             return (
                                 <Link
                                     key={item.path}
@@ -89,7 +89,7 @@ export default function Sidebar() {
             <nav className={styles.mobileNav}>
                 {MENU_ITEMS.map((item) => {
                     const Icon = item.icon;
-                    const isActive = pathname === item.path || (item.path !== '/' && pathname.startsWith(item.path));
+                    const isActive = pathname === item.path || (item.path === '/home' && pathname === '/') || (item.path !== '/home' && item.path !== '/' && pathname.startsWith(item.path));
                     return (
                         <Link
                             key={item.path}

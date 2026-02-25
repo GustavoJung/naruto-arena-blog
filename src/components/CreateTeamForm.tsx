@@ -121,9 +121,12 @@ export default function CreateTeamForm() {
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
                     className={styles.textarea}
-                    placeholder="Explique como este time funciona..."
+                    placeholder="Explique como este time funciona...&#10;&#10;Dica: use [Nome da Habilidade] para criar tooltips interativos, ex: [Shadow Clones]"
                     required
                 />
+                <p className={styles.fieldHint}>
+                    💡 Dica: Coloque o nome de uma habilidade entre <code>[colchetes]</code> para criar um tooltip interativo. Ex: <code>[Shadow Clones]</code>
+                </p>
             </div>
 
             <button type="submit" className="btn btn-primary" disabled={selectedChars.length !== 3}>

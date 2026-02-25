@@ -45,16 +45,7 @@ export default function TeamCard({ team }: TeamCardProps) {
                             {team.author && (
                                 <span className={styles.author}>por <strong>{team.author}</strong></span>
                             )}
-                            {team.purpose && (
-                                <span className={`${styles.purposeBadge} ${styles[team.purpose.toLowerCase()]}`}>
-                                    {team.purpose === 'Mission' ? <Swords size={12} /> : <Trophy size={12} />}
-                                    {team.purpose === 'Mission' && team.missionId
-                                        ? translateUI(ALL_DETAILED_MISSIONS.find(m => m.id === team.missionId)?.title || 'Missão')
-                                        : team.purpose === 'Ranking' && team.rankRequirement && team.rankRequirement !== 'None'
-                                            ? `Ranking - ${translateUI(team.rankRequirement)}`
-                                            : team.purpose === 'Ranking' ? 'Ranking' : team.purpose === 'Mission' ? 'Missão' : team.purpose}
-                                </span>
-                            )}
+
                         </div>
 
                         <div className={styles.headerActions}>
@@ -77,17 +68,20 @@ export default function TeamCard({ team }: TeamCardProps) {
                             )}
                         </div>
                     </div>
+
+                    {team.purpose && (
+                        <span className={`${styles.purposeBadge} ${styles[team.purpose.toLowerCase()]}`}>
+                            {team.purpose === 'Mission' ? <Swords size={12} /> : <Trophy size={12} />}
+                            {team.purpose === 'Mission' && team.missionId
+                                ? translateUI(ALL_DETAILED_MISSIONS.find(m => m.id === team.missionId)?.title || 'Missão')
+                                : team.purpose === 'Ranking' && team.rankRequirement && team.rankRequirement !== 'None'
+                                    ? `Ranking - ${translateUI(team.rankRequirement)}`
+                                    : team.purpose === 'Ranking' ? 'Ranking' : team.purpose === 'Mission' ? 'Missão' : team.purpose}
+                        </span>
+                    )}
                 </div>
 
-                {team.tags && team.tags.length > 0 && (
-                    <div className={styles.tagGrid}>
-                        {team.tags.map(tag => (
-                            <span key={tag} className={styles.teamTag}>
-                                {translateUI(tag)}
-                            </span>
-                        ))}
-                    </div>
-                )}
+
 
                 <div className={styles.characters}>
                     {team.characters.map((char, index) => (
@@ -109,8 +103,15 @@ export default function TeamCard({ team }: TeamCardProps) {
                         </div>
                     ))}
                 </div>
-
-                <pre className={styles.description}>{team.description}</pre>
+                {team.tags && team.tags.length > 0 && (
+                    <div className={styles.tagGrid}>
+                        {team.tags.map(tag => (
+                            <span key={tag} className={styles.teamTag}>
+                                {translateUI(tag)}
+                            </span>
+                        ))}
+                    </div>
+                )}
             </div>
         </Link>
     );

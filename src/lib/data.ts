@@ -107,6 +107,30 @@ const formatName = (id: string) => {
     return name;
 };
 
+/**
+ * Find a skill by name. Searches team characters first (if provided), then globally.
+ */
+export function findSkillByName(
+    name: string,
+    characterContext?: Character[]
+): (Skill & { characterId: string }) | undefined {
+    const lowerName = name.toLowerCase();
+
+    if (characterContext) {
+        for (const char of characterContext) {
+            const skill = char.skills.find(s => s.name.toLowerCase() === lowerName);
+            if (skill) return { ...skill, characterId: char.id };
+        }
+    }
+
+    for (const char of ALL_CHARACTERS) {
+        const skill = char.skills.find(s => s.name.toLowerCase() === lowerName);
+        if (skill) return { ...skill, characterId: char.id };
+    }
+
+    return undefined;
+}
+
 // Map the raw JSON data to our application types
 export const ALL_CHARACTERS: Character[] = (rawCharacters as any[]).map(char => {
     const name = char.name;

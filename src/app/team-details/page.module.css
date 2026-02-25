@@ -250,10 +250,12 @@
 }
 
 .strategyContent {
-    white-space: pre-wrap;
+    white-space: pre-line;
     line-height: 1.8;
     font-size: 1.1rem;
     color: var(--color-text);
+    overflow: visible;
+    position: relative;
 }
 
 .linkedMission {
@@ -312,4 +314,43 @@
     .strategyContent {
         font-size: 1rem;
     }
+}
+
+.emptyState {
+    grid-column: 1 / -1;
+    /* ocupa todo grid */
+    width: 100%;
+    min-height: 320px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    gap: 16px;
+
+    padding: 40px 20px;
+    opacity: 0.9;
+}
+
+.emptyImage {
+    width: 220px;
+    max-width: 80%;
+    height: auto;
+    object-fit: contain;
+    opacity: 0.85;
+}
+
+.emptyTitle {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: white;
+}
+
+.emptyDescription {
+    font-size: 0.95rem;
+    color: #cfcfcf;
+    max-width: 420px;
+    line-height: 1.5;
 }
