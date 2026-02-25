@@ -284,11 +284,11 @@ export function translateUI(text: string): string {
         'Five Kage Summit Missions': 'Reunião dos Cinco Kage',
         'Fourth Shinobi World War Pt. 1 Missions': 'Quarta Guerra Ninja Pt. 1',
         'Genin': 'Genin',
-        'Chunnin': 'Chunin',
-        'Jounnin': 'Jonin',
+        'Chunnin': 'Chunnin',
+        'Jounnin': 'Jounnin',
         'Sannin': 'Sannin',
         'Hokage': 'Hokage',
-        'Missing-Nin': 'Nukenin',
+        'Missing-Nin': 'Missing-Nin',
         'Akatsuki': 'Akatsuki'
     };
 

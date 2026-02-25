@@ -1,4 +1,4 @@
-import missionsData from '../../public/assets/nawiki/missions_out/missions_out.json';
+import missionsData from '../../public/assets/nawiki/missions_out/missions_out_translated_v3.json';
 import { MissionSession } from './types';
 
 const BASE_PATH = '/naruto-arena-blog';

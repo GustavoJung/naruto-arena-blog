@@ -1,5 +1,5 @@
 import { Character, Mission, Skill, TeamTag, ChakraRequirement } from './types';
-import rawCharacters from '../../public/assets/nawiki/naruto_arena_characters_fixed.json';
+import rawCharacters from '../../public/assets/nawiki/naruto_arena_characters_translated.json';
 import { getCharacterImageUrl, getSkillImageUrl, translateName } from './utils';
 
 export const AVAILABLE_TEAM_TAGS: TeamTag[] = [
