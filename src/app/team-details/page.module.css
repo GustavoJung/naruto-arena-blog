@@ -89,6 +89,8 @@
     align-items: center;
     gap: 6px;
     text-transform: uppercase;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .purposeBadge.mission {
@@ -103,15 +105,39 @@
     border: 1px solid #fcd34d;
 }
 
-.likes {
+.likes span {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.likeBtn {
     display: flex;
     flex-direction: column;
     align-items: center;
     color: var(--color-text-muted);
     gap: 4px;
+    background: rgba(0, 46, 93, 0.05);
+    border: 1px solid rgba(0, 46, 93, 0.1);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: var(--font-family-body);
 }
 
-.likes span {
+.likeBtn:hover {
+    background: var(--color-primary-light);
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.2);
+}
+
+.likeBtn:active {
+    transform: scale(0.95);
+}
+
+.likeBtn span {
     font-weight: bold;
     font-size: 1rem;
 }

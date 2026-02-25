@@ -9,7 +9,7 @@ import { ThumbsUp, Calendar, ArrowLeft, Swords, Trophy } from 'lucide-react';
 
 export default function TeamDetailsClient({ id }: { id: string }) {
     const router = useRouter();
-    const { teams } = useTeams();
+    const { teams, likeTeam } = useTeams();
 
     const team = teams.find(t => t.id === id);
 
@@ -23,6 +23,10 @@ export default function TeamDetailsClient({ id }: { id: string }) {
             </div>
         );
     }
+
+    const handleLike = () => {
+        likeTeam(team.id);
+    };
 
     return (
         <div className={styles.container}>
@@ -39,6 +43,11 @@ export default function TeamDetailsClient({ id }: { id: string }) {
                                 <Calendar size={16} />
                                 {new Date(team.createdAt).toLocaleDateString()}
                             </div>
+                            {team.author && (
+                                <div className={styles.metaItem}>
+                                    por <strong>{team.author}</strong>
+                                </div>
+                            )}
                             {team.purpose && (
                                 <div className={`${styles.purposeBadge} ${styles[team.purpose.toLowerCase()]}`}>
                                     {team.purpose === 'Mission' ? <Swords size={12} /> : <Trophy size={12} />}
@@ -50,10 +59,11 @@ export default function TeamDetailsClient({ id }: { id: string }) {
                             )}
                         </div>
                     </div>
-                    <div className={styles.likes}>
+                    <button className={styles.likeBtn} onClick={handleLike}>
                         <ThumbsUp size={24} />
                         <span>{team.likes} Curtidas</span>
-                    </div>
+                    </button>
+
                 </div>
 
                 {team.tags && team.tags.length > 0 && (
@@ -65,6 +75,7 @@ export default function TeamDetailsClient({ id }: { id: string }) {
                         ))}
                     </div>
                 )}
+
 
                 <div className={styles.charactersGrid}>
                     {team.characters.map((char, index) => (

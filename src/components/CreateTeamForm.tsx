@@ -13,6 +13,7 @@ export default function CreateTeamForm() {
     const { addTeam } = useTeams();
 
     const [name, setName] = useState('');
+    const [author, setAuthor] = useState('');
     const [description, setDescription] = useState('');
     const [selectedChars, setSelectedChars] = useState<Character[]>([]);
     const [error, setError] = useState('');
@@ -36,7 +37,7 @@ export default function CreateTeamForm() {
             setError('Por favor, selecione exatamente 3 personagens.');
             return;
         }
-        if (!name.trim() || !description.trim()) {
+        if (!name.trim() || !description.trim() || !author.trim()) {
             setError('Por favor, preencha todos os campos.');
             return;
         }
@@ -44,6 +45,7 @@ export default function CreateTeamForm() {
         const newTeam: Team = {
             id: crypto.randomUUID(),
             name,
+            author,
             description,
             characters: selectedChars as [Character, Character, Character],
             createdAt: Date.now(),
@@ -58,17 +60,32 @@ export default function CreateTeamForm() {
         <form onSubmit={handleSubmit} className={styles.form}>
             {error && <div className={styles.error}>{error}</div>}
 
-            <div className={styles.field}>
-                <label htmlFor="teamName" className={styles.label}>Nome do Time</label>
-                <input
-                    id="teamName"
-                    type="text"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    className={styles.input}
-                    placeholder="ex: Time 7 Renascido"
-                    required
-                />
+            <div className={styles.fieldGrid}>
+                <div className={styles.field}>
+                    <label htmlFor="teamName" className={styles.label}>Nome do Time</label>
+                    <input
+                        id="teamName"
+                        type="text"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        className={styles.input}
+                        placeholder="ex: Time 7 Renascido"
+                        required
+                    />
+                </div>
+
+                <div className={styles.field}>
+                    <label htmlFor="author" className={styles.label}>Seu Nickname</label>
+                    <input
+                        id="author"
+                        type="text"
+                        value={author}
+                        onChange={(e) => setAuthor(e.target.value)}
+                        className={styles.input}
+                        placeholder="ex: Uzumaki_Ninja"
+                        required
+                    />
+                </div>
             </div>
 
             <div className={styles.field}>

@@ -15,7 +15,7 @@ interface TeamCardProps {
 
 export default function TeamCard({ team }: TeamCardProps) {
     const { isAdmin } = useAuth();
-    const { deleteTeam } = useTeams();
+    const { deleteTeam, likeTeam } = useTeams();
 
     const handleDelete = (e: React.MouseEvent) => {
         e.preventDefault();
@@ -25,14 +25,26 @@ export default function TeamCard({ team }: TeamCardProps) {
         }
     };
 
+    const handleLike = (e: React.MouseEvent) => {
+        e.preventDefault();
+        e.stopPropagation();
+        likeTeam(team.id);
+    };
+
     return (
         <Link href={`/team-details?id=${team.id}`} className={styles.cardLink}>
             <div className={styles.card}>
                 <div className={styles.header}>
-                    <div>
+                    <div className={styles.titleWrapper}>
                         <h3 className={styles.title}>{team.name}</h3>
-                        <div className={styles.metaRow}>
-                            <span className={styles.date}>{new Date(team.createdAt).toLocaleDateString()}</span>
+                        <span className={styles.date}>{new Date(team.createdAt).toLocaleDateString()}</span>
+                    </div>
+
+                    <div className={styles.metaRow}>
+                        <div className={styles.authorWrapper}>
+                            {team.author && (
+                                <span className={styles.author}>por <strong>{team.author}</strong></span>
+                            )}
                             {team.purpose && (
                                 <span className={`${styles.purposeBadge} ${styles[team.purpose.toLowerCase()]}`}>
                                     {team.purpose === 'Mission' ? <Swords size={12} /> : <Trophy size={12} />}
@@ -44,21 +56,26 @@ export default function TeamCard({ team }: TeamCardProps) {
                                 </span>
                             )}
                         </div>
-                    </div>
-                    <div className={styles.headerActions}>
-                        <div className={styles.likes}>
-                            <ThumbsUp size={16} />
-                            <span>{team.likes}</span>
-                        </div>
-                        {isAdmin && (
+
+                        <div className={styles.headerActions}>
                             <button
-                                className={styles.deleteBtn}
-                                onClick={handleDelete}
-                                title="Excluir time"
+                                className={styles.likeBtn}
+                                onClick={handleLike}
+                                title="Curtir time"
                             >
-                                <Trash2 size={16} />
+                                <ThumbsUp size={14} />
+                                <span>{team.likes}</span>
                             </button>
-                        )}
+                            {isAdmin && (
+                                <button
+                                    className={styles.deleteBtn}
+                                    onClick={handleDelete}
+                                    title="Excluir time"
+                                >
+                                    <Trash2 size={16} />
+                                </button>
+                            )}
+                        </div>
                     </div>
                 </div>
 

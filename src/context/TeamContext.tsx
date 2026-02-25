@@ -7,6 +7,7 @@ interface TeamContextType {
     teams: Team[];
     addTeam: (team: Team) => void;
     deleteTeam: (id: string) => void;
+    likeTeam: (id: string) => void;
     clearTeams: () => void;
 }
 
@@ -44,13 +45,19 @@ export const TeamProvider = ({ children }: { children: ReactNode }) => {
         setTeams((prev) => prev.filter(t => t.id !== id));
     };
 
+    const likeTeam = (id: string) => {
+        setTeams((prev) => prev.map(t =>
+            t.id === id ? { ...t, likes: t.likes + 1 } : t
+        ));
+    };
+
     const clearTeams = () => {
         setTeams([]);
         localStorage.removeItem('naruto-arena-teams');
     };
 
     return (
-        <TeamContext.Provider value={{ teams, addTeam, deleteTeam, clearTeams }}>
+        <TeamContext.Provider value={{ teams, addTeam, deleteTeam, likeTeam, clearTeams }}>
             {children}
         </TeamContext.Provider>
     );

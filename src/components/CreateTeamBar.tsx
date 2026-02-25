@@ -19,6 +19,7 @@ export default function CreateTeamBar() {
     const MAX_DESC_LENGTH = 600;
 
     const [name, setName] = useState('');
+    const [author, setAuthor] = useState('');
     const [description, setDescription] = useState('');
     const [selectedChars, setSelectedChars] = useState<Character[]>([]);
     const [selectedTags, setSelectedTags] = useState<TeamTag[]>([]);
@@ -27,8 +28,6 @@ export default function CreateTeamBar() {
     const [purpose, setPurpose] = useState<'Mission' | 'Ranking'>('Ranking');
     const [missionId, setMissionId] = useState('');
     const [rankLevel, setRankLevel] = useState<Team['rankRequirement']>('None');
-
-    if (!isAdmin) return null;
 
     const handleSelectCharacter = (char: Character) => {
         if (selectedChars.length < 3) {
@@ -58,11 +57,12 @@ export default function CreateTeamBar() {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        if (selectedChars.length !== 3 || !name || !description) return;
+        if (selectedChars.length !== 3 || !name || !description || !author) return;
 
         const newTeam: Team = {
             id: crypto.randomUUID(),
             name,
+            author,
             description,
             characters: selectedChars as [Character, Character, Character],
             createdAt: Date.now(),
@@ -78,6 +78,7 @@ export default function CreateTeamBar() {
 
         // Reset form
         setName('');
+        setAuthor('');
         setDescription('');
         setSelectedChars([]);
         setSelectedTags([]);
@@ -122,12 +123,23 @@ export default function CreateTeamBar() {
 
             <form onSubmit={handleSubmit} className={styles.form}>
                 <div className={styles.topRow}>
-                    <div className={`${styles.inputGroup} flex-grow`}>
+                    <div className={styles.inputGroup} style={{ flexGrow: 2 }}>
                         <input
                             type="text"
                             placeholder="Nome do Time"
                             value={name}
                             onChange={(e) => setName(e.target.value)}
+                            className={styles.input}
+                            required
+                        />
+                    </div>
+
+                    <div className={styles.inputGroup} style={{ flexGrow: 1 }}>
+                        <input
+                            type="text"
+                            placeholder="Seu Nick"
+                            value={author}
+                            onChange={(e) => setAuthor(e.target.value)}
                             className={styles.input}
                             required
                         />
@@ -235,7 +247,7 @@ export default function CreateTeamBar() {
                     <button
                         type="submit"
                         className="btn btn-primary"
-                        disabled={selectedChars.length !== 3 || !name || !description || (purpose === 'Mission' && !missionId)}
+                        disabled={selectedChars.length !== 3 || !name || !description || !author || (purpose === 'Mission' && !missionId)}
                     >
                         Postar Time
                     </button>
