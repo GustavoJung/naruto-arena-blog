@@ -43,27 +43,45 @@ export default function HomePage() {
     return (
         <div className={styles.container}>
             <header className={styles.hero}>
-                <h1 className={styles.title}>Novidades</h1>
-                <p className={styles.subtitle}>Fique por dentro das últimas notícias e atualizações!</p>
+                <h1 className={styles.title}>Pergaminho Ninja</h1>
+                <p className={styles.subtitle}>O seu guia definitivo para o Naruto Arena</p>
             </header>
 
-            <main className={styles.newsList}>
-                {news.map(item => (
-                    <article key={item.id} className={styles.newsItem} data-type={item.type}>
-                        <div className={styles.newsHeader}>
-                            <div className={styles.iconWrapper}>
-                                {item.icon}
+            <section className={styles.aboutSection}>
+                <div className={styles.aboutContent}>
+                    <h2>Bem-vindo(a) ao QG do campo de batalha!</h2>
+                    <p>
+                        Este blog foi criado de fã para fã, com o objetivo de auxiliar os jogadores do <strong>Naruto-Arena</strong>.
+                        Nosso acervo conta com a lista completa de <span className={styles.highlightText}>Personagens e Habilidades</span> detalhadas,
+                        guias completos para superar todas as <span className={styles.highlightText}>Missões</span> do jogo,
+                        e uma plataforma dedicada para você montar, compartilhar e descobrir os melhores <span className={styles.highlightText}>Times</span>.
+                    </p>
+                    <p className={styles.welcomeFooter}>
+                        Explore o menu lateral!
+                    </p>
+                </div>
+            </section>
+
+            <div className={styles.newsContainer}>
+                <h2 className={styles.newsSectionHeader}>Últimas Atualizações</h2>
+                <main className={styles.newsList}>
+                    {news.map(item => (
+                        <article key={item.id} className={styles.newsItem} data-type={item.type}>
+                            <div className={styles.newsHeader}>
+                                <div className={styles.iconWrapper}>
+                                    {item.icon}
+                                </div>
+                                <div className={styles.headerInfo}>
+                                    <h2 className={styles.newsTitle}>{item.title}</h2>
+                                    <span className={styles.newsDate}>{item.date}</span>
+                                </div>
+                                <span className={styles.tag}>{item.type}</span>
                             </div>
-                            <div className={styles.headerInfo}>
-                                <h2 className={styles.newsTitle}>{item.title}</h2>
-                                <span className={styles.newsDate}>{item.date}</span>
-                            </div>
-                            <span className={styles.tag}>{item.type}</span>
-                        </div>
-                        <p className={styles.newsContent}>{item.content}</p>
-                    </article>
-                ))}
-            </main>
+                            <p className={styles.newsContent}>{item.content}</p>
+                        </article>
+                    ))}
+                </main>
+            </div>
         </div>
     );
 }
