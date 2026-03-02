@@ -70,6 +70,21 @@ const PRE_PREFIXED_SKILLS = [
     'Rasenshuriken', 'Claw Swipe', 'Fire Release Fire Ball', 'Mind Body Switch'
 ];
 
+/**
+ * Converts a string to a URL-friendly slug (lowercase, hyphens instead of spaces).
+ */
+export function toSlug(text: string): string {
+    if (!text) return '';
+    return text
+        .toLowerCase()
+        .normalize('NFD') // Normalize special characters
+        .replace(/[\u0300-\u036f]/g, '') // Remove diacritics
+        .replace(/[^\w\s-]/g, '') // Remove non-alphanumeric (except space/hyphen)
+        .replace(/\s+/g, '-') // Replace spaces with hyphens
+        .replace(/-+/g, '-') // Collapse multiple hyphens
+        .trim();
+}
+
 export function getCharacterImageUrl(id: string, name: string): string {
     return `${BASE_PATH}/assets/nawiki/characters/${id.toLowerCase()}.png`;
 }
@@ -77,6 +92,7 @@ export function getCharacterImageUrl(id: string, name: string): string {
 export function handleCharacterImageError(e: React.SyntheticEvent<HTMLImageElement, Event>, id: string, name: string) {
     const target = e.target as HTMLImageElement;
     const currentSrc = target.src;
+    const baseUrl = `${BASE_PATH}/assets/nawiki/characters`;
 
     if (currentSrc.endsWith('.png')) {
         // Try ID-based .jpg
@@ -84,7 +100,15 @@ export function handleCharacterImageError(e: React.SyntheticEvent<HTMLImageEleme
     } else if (currentSrc.includes(id.toLowerCase())) {
         // If ID-based JPEG failed, try name-based lookup
         const finalName = CHARACTER_NAME_MAPPING[name] || name;
-        target.src = `${BASE_PATH}/assets/nawiki/characters/${finalName}.jpg`;
+        target.src = `${baseUrl}/${finalName}.jpg`;
+    } else if (!currentSrc.includes('slug=')) {
+        // Try slugified name fallbacks
+        const slug = toSlug(CHARACTER_NAME_MAPPING[name] || name);
+        // Add a query param to avoid infinite loops and identify it's a slug attempt
+        target.src = `${baseUrl}/${slug}.jpg?slug=1`;
+    } else if (currentSrc.endsWith('.jpg?slug=1')) {
+        // Final attempt with slugified .png
+        target.src = currentSrc.replace('.jpg?slug=1', '.png?slug=2');
     } else {
         // Final fallback: hide
         target.onerror = null;
@@ -105,6 +129,7 @@ export function getSkillImageUrl(skillId: string, charId: string, skillName: str
 export function handleSkillImageError(e: React.SyntheticEvent<HTMLImageElement, Event>, skillId: string, charId: string, skillName: string, charName?: string) {
     const target = e.target as HTMLImageElement;
     const currentSrc = target.src;
+    const baseUrl = `${BASE_PATH}/assets/nawiki/skills`;
 
     if (currentSrc.endsWith('.png')) {
         // Try ID-based .jpg
@@ -115,7 +140,14 @@ export function handleSkillImageError(e: React.SyntheticEvent<HTMLImageElement, 
         if (charName && PRE_PREFIXED_SKILLS.some(s => skillName.includes(s))) {
             finalName = `${charName} - ${skillName}`;
         }
-        target.src = `${BASE_PATH}/assets/nawiki/skills/${finalName}.jpg`;
+        target.src = `${baseUrl}/${finalName}.jpg`;
+    } else if (!currentSrc.includes('slug=')) {
+        // Try slugified skill name
+        const slug = toSlug(skillName);
+        target.src = `${baseUrl}/${slug}.jpg?slug=1`;
+    } else if (currentSrc.endsWith('.jpg?slug=1')) {
+        // Final attempt with slugified .png
+        target.src = currentSrc.replace('.jpg?slug=1', '.png?slug=2');
     } else {
         // Final fallback
         target.onerror = null;

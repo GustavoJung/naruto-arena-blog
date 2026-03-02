@@ -2,21 +2,37 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Character, Team } from '@/lib/types';
+import { Character } from '@/lib/types';
 import { useTeams } from '@/context/TeamContext';
+import { useAuth } from '@/context/AuthContext';
 import CharacterSelector from './CharacterSelector';
 import styles from './CreateTeamForm.module.css';
-import { Trash2 } from 'lucide-react';
+import { Trash2, Loader2 } from 'lucide-react';
 
 export default function CreateTeamForm() {
     const router = useRouter();
     const { addTeam } = useTeams();
+    const { user, loading: authLoading } = useAuth();
 
     const [name, setName] = useState('');
-    const [author, setAuthor] = useState('');
+    const [nickname, setNickname] = useState(user?.displayName || '');
     const [description, setDescription] = useState('');
     const [selectedChars, setSelectedChars] = useState<Character[]>([]);
     const [error, setError] = useState('');
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
+    if (authLoading) {
+        return <div className={styles.loading}><Loader2 className="animate-spin" /> Carregando...</div>;
+    }
+
+    if (!user) {
+        return (
+            <div className={styles.errorContainer}>
+                <h2>Acesso Negado</h2>
+                <p>Você precisa estar logado para criar um time.</p>
+            </div>
+        );
+    }
 
     const handleSelectCharacter = (char: Character) => {
         if (selectedChars.length >= 3) {
@@ -31,29 +47,31 @@ export default function CreateTeamForm() {
         setSelectedChars(selectedChars.filter(c => c.id !== id));
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         if (selectedChars.length !== 3) {
             setError('Por favor, selecione exatamente 3 personagens.');
             return;
         }
-        if (!name.trim() || !description.trim() || !author.trim()) {
+        if (!name.trim() || !description.trim()) {
             setError('Por favor, preencha todos os campos.');
             return;
         }
 
-        const newTeam: Team = {
-            id: crypto.randomUUID(),
-            name,
-            author,
-            description,
-            characters: selectedChars as [Character, Character, Character],
-            createdAt: Date.now(),
-            likes: 0,
-        };
-
-        addTeam(newTeam);
-        router.push('/');
+        setIsSubmitting(true);
+        try {
+            await addTeam({
+                name,
+                description,
+                authorName: nickname,
+                characters: selectedChars as [Character, Character, Character],
+            });
+            router.push('/teams');
+        } catch (err) {
+            setError('Falha ao criar time. Tente novamente.');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -71,19 +89,20 @@ export default function CreateTeamForm() {
                         className={styles.input}
                         placeholder="ex: Time 7 Renascido"
                         required
+                        disabled={isSubmitting}
                     />
                 </div>
-
                 <div className={styles.field}>
-                    <label htmlFor="author" className={styles.label}>Seu Nickname</label>
+                    <label htmlFor="nickname" className={styles.label}>Nick (Autor)</label>
                     <input
-                        id="author"
+                        id="nickname"
                         type="text"
-                        value={author}
-                        onChange={(e) => setAuthor(e.target.value)}
+                        value={nickname}
+                        onChange={(e) => setNickname(e.target.value)}
                         className={styles.input}
-                        placeholder="ex: Uzumaki_Ninja"
+                        placeholder="Seu apelido..."
                         required
+                        disabled={isSubmitting}
                     />
                 </div>
             </div>
@@ -129,8 +148,12 @@ export default function CreateTeamForm() {
                 </p>
             </div>
 
-            <button type="submit" className="btn btn-primary" disabled={selectedChars.length !== 3}>
-                Criar Time
+            <button
+                type="submit"
+                className="btn btn-primary"
+                disabled={selectedChars.length !== 3 || isSubmitting}
+            >
+                {isSubmitting ? 'Criando...' : 'Criar Time'}
             </button>
         </form>
     );

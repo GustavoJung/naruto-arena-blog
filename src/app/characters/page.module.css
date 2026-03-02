@@ -597,3 +597,12 @@
     color: #64748b;
     font-weight: 700;
 }
+
+.date {
+    font-size: 0.65rem;
+    color: var(--color-text);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.8;
+}

@@ -3,7 +3,7 @@
 import { Team } from '@/lib/types';
 import styles from './TeamCard.module.css';
 import { getChakraTypes, getCharacterImageUrl, translateUI, handleCharacterImageError } from '@/lib/utils';
-import { Clock, ThumbsUp, Swords, Trophy, Trash2 } from 'lucide-react';
+import { Clock, ThumbsUp, Swords, Trophy, Trash2, AlignCenter } from 'lucide-react';
 import Link from 'next/link';
 import { ALL_DETAILED_MISSIONS } from '@/lib/missions';
 import { useAuth } from '@/context/AuthContext';
@@ -14,22 +14,26 @@ interface TeamCardProps {
 }
 
 export default function TeamCard({ team }: TeamCardProps) {
-    const { isAdmin } = useAuth();
+    const { user, isAdmin } = useAuth();
     const { deleteTeam, likeTeam } = useTeams();
 
-    const handleDelete = (e: React.MouseEvent) => {
+    const handleDelete = async (e: React.MouseEvent) => {
         e.preventDefault();
         e.stopPropagation();
         if (confirm('Deseja excluir este time?')) {
-            deleteTeam(team.id);
+            await deleteTeam(team.id);
         }
     };
 
-    const handleLike = (e: React.MouseEvent) => {
+    const handleLike = async (e: React.MouseEvent) => {
         e.preventDefault();
         e.stopPropagation();
-        likeTeam(team.id);
+        await likeTeam(team.id, team.likes);
     };
+
+    const authorName = team.authorName || team.author;
+
+    const hasLiked = team.likedBy?.includes(user?.uid || '');
 
     return (
         <Link href={`/team-details?id=${team.id}`} className={styles.cardLink}>
@@ -37,24 +41,28 @@ export default function TeamCard({ team }: TeamCardProps) {
                 <div className={styles.header}>
                     <div className={styles.titleWrapper}>
                         <h3 className={styles.title}>{team.name}</h3>
-                        <span className={styles.date}>{new Date(team.createdAt).toLocaleDateString()}</span>
+                        <span className={styles.date}>
+                            {typeof team.createdAt === 'string'
+                                ? new Date(team.createdAt).toLocaleDateString()
+                                : new Date(team.createdAt).toLocaleDateString()}
+                        </span>
                     </div>
 
                     <div className={styles.metaRow}>
                         <div className={styles.authorWrapper}>
-                            {team.author && (
-                                <span className={styles.author}>por <strong>{team.author}</strong></span>
+                            {authorName && (
+                                <span className={styles.author}>por <strong>{authorName}</strong></span>
                             )}
-
                         </div>
 
                         <div className={styles.headerActions}>
                             <button
-                                className={styles.likeBtn}
+                                className={`${styles.likeBtn} ${!user ? styles.disabled : ''} ${hasLiked ? styles.active : ''}`}
                                 onClick={handleLike}
-                                title="Curtir time"
+                                disabled={!user || hasLiked}
+                                title={!user ? "Faça login para curtir" : hasLiked ? "Você já curtiu" : "Curtir time"}
                             >
-                                <ThumbsUp size={14} />
+                                <ThumbsUp size={14} fill={hasLiked ? "currentColor" : "none"} />
                                 <span>{team.likes}</span>
                             </button>
                             {isAdmin && (
@@ -80,9 +88,6 @@ export default function TeamCard({ team }: TeamCardProps) {
                         </span>
                     )}
                 </div>
-
-
-
                 <div className={styles.characters}>
                     {team.characters.map((char, index) => (
                         <div className={styles.character} key={char.id || index}>
@@ -112,6 +117,7 @@ export default function TeamCard({ team }: TeamCardProps) {
                         ))}
                     </div>
                 )}
+                <span className={styles.date} style={{ textAlign: 'center', width: '100%' }}>Clique no quadro para saber mais</span>
             </div>
         </Link>
     );

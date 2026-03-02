@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { ALL_CHARACTERS } from '@/lib/data';
-import { getChakraTypes, getCharacterImageUrl, getSkillImageUrl, parseDescription, translateUI } from '@/lib/utils';
+import { getChakraTypes, getCharacterImageUrl, handleCharacterImageError, getSkillImageUrl, parseDescription, translateUI } from '@/lib/utils';
 import { Character, Skill } from '@/lib/types';
 import styles from './page.module.css';
 import { Clock, Zap, Target as TargetIcon, X, Search } from 'lucide-react';
@@ -63,6 +63,8 @@ export default function CharactersPage() {
                             </button>
                         ))}
                     </div>
+                    <span className={styles.date} style={{ textAlign: 'center', width: '100%' }}>Selecione o personagem para ver suas habilidades!</span>
+
                 </div>
 
                 <div className={styles.grid}>
@@ -77,12 +79,7 @@ export default function CharactersPage() {
                                     src={getCharacterImageUrl(char.id, char.name)}
                                     alt={char.name}
                                     className={styles.avatarImg}
-                                    onError={(e) => {
-                                        const target = e.target as HTMLImageElement;
-                                        target.onerror = null;
-                                        target.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
-                                        target.style.opacity = '0';
-                                    }}
+                                    onError={(e) => handleCharacterImageError(e, char.id, char.name)}
                                 />
                                 <div className={styles.dotsContainer}>
                                     {getChakraTypes(char).map((type: any, idx: number) => (
@@ -110,12 +107,7 @@ export default function CharactersPage() {
                                     src={getCharacterImageUrl(selectedChar.id, selectedChar.name)}
                                     alt={selectedChar.name}
                                     className={styles.avatarImg}
-                                    onError={(e) => {
-                                        const target = e.target as HTMLImageElement;
-                                        target.onerror = null;
-                                        target.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
-                                        target.style.opacity = '0';
-                                    }}
+                                    onError={(e) => handleCharacterImageError(e, selectedChar.id, selectedChar.name)}
                                 />
                             </div>
                             <div className={styles.headerInfo}>

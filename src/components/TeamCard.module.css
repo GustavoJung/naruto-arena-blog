@@ -318,6 +318,18 @@
     transform: scale(0.95);
 }
 
+.likeBtn.active {
+    background: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+    cursor: default;
+}
+
+.likeBtn.active:hover {
+    transform: none;
+    box-shadow: none;
+}
+
 .deleteBtn {
     background: transparent;
     border: none;

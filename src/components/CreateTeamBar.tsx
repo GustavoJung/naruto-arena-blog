@@ -15,11 +15,11 @@ import { Plus, X, Swords, Trophy, ScrollText, Shield, Tag as TagIcon } from 'luc
 export default function CreateTeamBar() {
     const { addTeam } = useTeams();
     const { showToast } = useToast();
-    const { isAdmin } = useAuth();
+    const { user, isAdmin } = useAuth();
     const MAX_DESC_LENGTH = 600;
 
     const [name, setName] = useState('');
-    const [author, setAuthor] = useState('');
+    const [nickname, setNickname] = useState(user?.displayName || '');
     const [description, setDescription] = useState('');
     const [selectedChars, setSelectedChars] = useState<Character[]>([]);
     const [selectedTags, setSelectedTags] = useState<TeamTag[]>([]);
@@ -28,6 +28,7 @@ export default function CreateTeamBar() {
     const [purpose, setPurpose] = useState<'Mission' | 'Ranking'>('Ranking');
     const [missionId, setMissionId] = useState('');
     const [rankLevel, setRankLevel] = useState<Team['rankRequirement']>('None');
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleSelectCharacter = (char: Character) => {
         if (selectedChars.length < 3) {
@@ -55,47 +56,53 @@ export default function CreateTeamBar() {
         }
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        if (selectedChars.length !== 3 || !name || !description || !author) return;
+        if (!user) {
+            showToast('Você precisa estar logado para postar um time', 'error');
+            return;
+        }
+        if (selectedChars.length !== 3 || !name || !description) return;
 
-        const newTeam: Team = {
-            id: crypto.randomUUID(),
-            name,
-            author,
-            description,
-            characters: selectedChars as [Character, Character, Character],
-            createdAt: Date.now(),
-            likes: 0,
-            purpose,
-            missionId: purpose === 'Mission' ? missionId : undefined,
-            rankRequirement: purpose === 'Ranking' ? rankLevel : undefined,
-            tags: selectedTags
-        };
+        setIsSubmitting(true);
+        try {
+            await addTeam({
+                name,
+                description,
+                authorName: nickname,
+                characters: selectedChars as [Character, Character, Character],
+                purpose,
+                missionId: purpose === 'Mission' ? missionId : undefined,
+                rankRequirement: purpose === 'Ranking' ? rankLevel : undefined,
+                tags: selectedTags
+            });
 
-        addTeam(newTeam);
-        showToast('Time criado com sucesso!', 'success');
-
-        // Reset form
-        setName('');
-        setAuthor('');
-        setDescription('');
-        setSelectedChars([]);
-        setSelectedTags([]);
-        setPurpose('Ranking');
-        setMissionId('');
-        setRankLevel('None');
-        setIsPopoverOpen(false);
-        setIsOpen(false);
+            // Reset form
+            setName('');
+            setDescription('');
+            setSelectedChars([]);
+            setSelectedTags([]);
+            setPurpose('Ranking');
+            setMissionId('');
+            setRankLevel('None');
+            setIsPopoverOpen(false);
+            setIsOpen(false);
+        } catch (error) {
+            console.error(error);
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     if (!isOpen) {
         return (
             <button
                 className={styles.openBtn}
+                disabled={!user}
                 onClick={() => setIsOpen(true)}
+                title={!user ? "Faça login para criar times" : undefined}
             >
-                <Plus size={24} /> Criar Novo Time
+                <Plus size={24} /> {user ? "Criar Novo Time" : "Login necessário para criar times"}
             </button>
         );
     }
@@ -123,7 +130,7 @@ export default function CreateTeamBar() {
 
             <form onSubmit={handleSubmit} className={styles.form}>
                 <div className={styles.topRow}>
-                    <div className={styles.inputGroup} style={{ flexGrow: 2 }}>
+                    <div className={styles.inputGroup} style={{ flexGrow: 1 }}>
                         <input
                             type="text"
                             placeholder="Nome do Time"
@@ -131,17 +138,18 @@ export default function CreateTeamBar() {
                             onChange={(e) => setName(e.target.value)}
                             className={styles.input}
                             required
+                            disabled={isSubmitting}
                         />
                     </div>
-
                     <div className={styles.inputGroup} style={{ flexGrow: 1 }}>
                         <input
                             type="text"
                             placeholder="Seu Nick"
-                            value={author}
-                            onChange={(e) => setAuthor(e.target.value)}
+                            value={nickname}
+                            onChange={(e) => setNickname(e.target.value)}
                             className={styles.input}
                             required
+                            disabled={isSubmitting}
                         />
                     </div>
 
@@ -247,9 +255,9 @@ export default function CreateTeamBar() {
                     <button
                         type="submit"
                         className="btn btn-primary"
-                        disabled={selectedChars.length !== 3 || !name || !description || !author || (purpose === 'Mission' && !missionId)}
+                        disabled={selectedChars.length !== 3 || !name || !description || (purpose === 'Mission' && !missionId) || isSubmitting}
                     >
-                        Postar Time
+                        {isSubmitting ? 'Postando...' : 'Postar Time'}
                     </button>
                 </div>
 

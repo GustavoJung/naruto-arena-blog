@@ -6,11 +6,17 @@ import { getChakraTypes, translateUI, getCharacterImageUrl, handleCharacterImage
 import { ALL_DETAILED_MISSIONS } from '@/lib/missions';
 import styles from './page.module.css';
 import { ThumbsUp, Calendar, ArrowLeft, Swords, Trophy } from 'lucide-react';
+import { useAuth } from '@/context/AuthContext';
 import FormattedStrategy from '@/components/FormattedStrategy';
 
 export default function TeamDetailsClient({ id }: { id: string }) {
     const router = useRouter();
-    const { teams, likeTeam } = useTeams();
+    const { teams, likeTeam, loading } = useTeams();
+    const { user } = useAuth();
+
+    if (loading) {
+        return <div className={styles.container}><h1 className={styles.teamName}>Carregando detalhes...</h1></div>;
+    }
 
     const team = teams.find(t => t.id === id);
 
@@ -25,8 +31,11 @@ export default function TeamDetailsClient({ id }: { id: string }) {
         );
     }
 
+    const authorName = team.authorName || team.author;
+    const hasLiked = team.likedBy?.includes(user?.uid || '');
+
     const handleLike = () => {
-        likeTeam(team.id);
+        likeTeam(team.id, team.likes);
     };
 
     return (
@@ -42,11 +51,13 @@ export default function TeamDetailsClient({ id }: { id: string }) {
                         <div className={styles.meta}>
                             <div className={styles.metaItem}>
                                 <Calendar size={16} />
-                                {new Date(team.createdAt).toLocaleDateString()}
+                                {typeof team.createdAt === 'string'
+                                    ? new Date(team.createdAt).toLocaleDateString()
+                                    : new Date(team.createdAt).toLocaleDateString()}
                             </div>
-                            {team.author && (
+                            {authorName && (
                                 <div className={styles.metaItem}>
-                                    por <strong>{team.author}</strong>
+                                    por <strong>{authorName}</strong>
                                 </div>
                             )}
                             {team.purpose && (
@@ -60,8 +71,13 @@ export default function TeamDetailsClient({ id }: { id: string }) {
                             )}
                         </div>
                     </div>
-                    <button className={styles.likeBtn} onClick={handleLike}>
-                        <ThumbsUp size={24} />
+                    <button
+                        className={`${styles.likeBtn} ${!user ? styles.disabled : ''} ${hasLiked ? styles.active : ''}`}
+                        onClick={handleLike}
+                        disabled={!user || hasLiked}
+                        title={!user ? "Faça login para curtir" : hasLiked ? "Você já curtiu" : "Curtir time"}
+                    >
+                        <ThumbsUp size={24} fill={hasLiked ? "currentColor" : "none"} />
                         <span>{team.likes} Curtidas</span>
                     </button>
 

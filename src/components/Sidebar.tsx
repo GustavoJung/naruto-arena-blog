@@ -17,8 +17,28 @@ const MENU_ITEMS = [
 
 export default function Sidebar() {
     const pathname = usePathname();
-    const { role, setRole, isAdmin } = useAuth();
+    const { user, role, isAdmin, loading } = useAuth();
     const { clearTeams } = useTeams();
+
+    const handleLogin = async () => {
+        const { GoogleAuthProvider, signInWithPopup } = await import('firebase/auth');
+        const { auth } = await import('@/lib/firebase');
+        const provider = new GoogleAuthProvider();
+        try {
+            await signInWithPopup(auth, provider);
+        } catch (error) {
+            console.error("Login failed:", error);
+        }
+    };
+
+    const handleLogout = async () => {
+        const { auth } = await import('@/lib/firebase');
+        try {
+            await auth.signOut();
+        } catch (error) {
+            console.error("Logout failed:", error);
+        }
+    };
 
     return (
         <>
@@ -52,36 +72,35 @@ export default function Sidebar() {
                 </div>
 
                 <div className={styles.roleSwitcher}>
-                    <div className={styles.adminActions}>
-                        <span className={styles.roleLabel}>Acessado como:</span>
-                        {isAdmin && (
-                            <button
-                                className={styles.clearBtn}
-                                onClick={() => {
-                                    if (confirm('Apagar todos os times permanentemente?')) {
-                                        clearTeams();
-                                    }
-                                }}
-                                title="Limpar todos os times"
-                            >
-                                <Trash2 size={14} />
+                    {loading ? (
+                        <div className={styles.loadingAuth}>Carregando...</div>
+                    ) : user ? (
+                        <div className={styles.userInfo}>
+                            <div className={styles.adminActions}>
+                                <span className={styles.userName}>{user.displayName || user.email}</span>
+                                {isAdmin && (
+                                    <button
+                                        className={styles.clearBtn}
+                                        onClick={() => {
+                                            if (confirm('Apagar todos os times permanentemente?')) {
+                                                clearTeams();
+                                            }
+                                        }}
+                                        title="Limpar todos os times"
+                                    >
+                                        <Trash2 size={14} />
+                                    </button>
+                                )}
+                            </div>
+                            <button className={styles.logoutBtn} onClick={handleLogout}>
+                                <Shield size={14} /> Sair ({role})
                             </button>
-                        )}
-                    </div>
-                    <div className={styles.roleButtons}>
-                        <button
-                            className={`${styles.roleBtn} ${!isAdmin ? styles.activeUser : ''}`}
-                            onClick={() => setRole('User')}
-                        >
-                            <Users size={14} /> Leitor
+                        </div>
+                    ) : (
+                        <button className={styles.loginBtn} onClick={handleLogin}>
+                            <Shield size={14} /> Entrar com Google
                         </button>
-                        <button
-                            className={`${styles.roleBtn} ${isAdmin ? styles.activeAdmin : ''}`}
-                            onClick={() => setRole('Admin')}
-                        >
-                            <Shield size={14} /> Administrador
-                        </button>
-                    </div>
+                    )}
                 </div>
             </aside>
 

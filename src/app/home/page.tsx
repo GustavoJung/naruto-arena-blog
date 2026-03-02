@@ -7,6 +7,14 @@ export default function HomePage() {
     const news = [
         {
             id: 1,
+            title: "Persistência de dados e login!",
+            date: "2026-mar-02",
+            content: "Agora você pode criar times para missões e para ranks, e eles serão salvos!",
+            type: "Funcionalidade",
+            icon: <Zap size={20} />
+        },
+        {
+            id: 2,
             title: "Lista de missões implementada!",
             date: "2026-feb-23",
             content: "Agora você pode visualizar todas as missões, requisitos e recompensas! Confira a aba Missões na barra lateral.",
@@ -14,7 +22,7 @@ export default function HomePage() {
             icon: <Zap size={20} />
         },
         {
-            id: 2,
+            id: 3,
             title: "Página de Detalhes de Times Implementada!",
             date: "2026-feb-12",
             content: "Clique em qualquer card de time para ver descrições completas de estratégia e estatísticas detalhadas dos personagens.",
@@ -22,7 +30,7 @@ export default function HomePage() {
             icon: <Info size={20} />
         },
         {
-            id: 3,
+            id: 4,
             title: "Lista de personagens, habilidades e detalhes implementada!",
             date: "2026-feb-11",
             content: "Acesse o menu de personagens e confira todos os detalhes!",

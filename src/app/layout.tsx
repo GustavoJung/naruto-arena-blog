@@ -8,19 +8,18 @@ export const metadata: Metadata = {
   description: 'Descubra as melhores composições de times para o Naruto Arena.',
 };
 
-import { Kanit, Inter } from 'next/font/google';
+import { Outfit, Plus_Jakarta_Sans } from 'next/font/google';
 import Sidebar from '@/components/Sidebar';
 
-const kanit = Kanit({
-  weight: ['400', '500', '600', '700', '800', '900'],
+const outfit = Outfit({
   subsets: ['latin'],
-  variable: '--font-kanit',
+  variable: '--font-outfit',
   display: 'swap',
 });
 
-const inter = Inter({
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-plus-jakarta',
   display: 'swap',
 });
 
@@ -31,7 +30,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className={`${kanit.variable} ${inter.variable}`}>
+      <body className={`${outfit.variable} ${plusJakartaSans.variable}`}>
         <Providers>
           <div className="layout-root">
             <Sidebar />

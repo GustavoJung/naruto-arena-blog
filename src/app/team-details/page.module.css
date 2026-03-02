@@ -142,6 +142,24 @@
     font-size: 1rem;
 }
 
+.likeBtn.active {
+    background: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+    cursor: default;
+}
+
+.likeBtn.active:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.likeBtn.disabled {
+    opacity: 0.6;
+    filter: grayscale(1);
+    cursor: not-allowed;
+}
+
 .charactersGrid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

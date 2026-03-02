@@ -39,8 +39,11 @@ export interface Team {
   name: string; // Name of the team composition
   description: string;
   characters: [Character, Character, Character]; // Array of exactly 3 characters
-  createdAt: number; // Timestamp
-  author?: string; // Optional author name
+  createdAt: string | number; // Timestamp or ISO string
+  author?: string; // Legacy author nickname
+  authorId?: string; // Firebase UID
+  authorName?: string; // Firebase display name or email
+  likedBy?: string[]; // Array of user UIDs who liked this team
   likes: number;
   purpose?: 'Mission' | 'Ranking'; // Purpose of the team
   missionId?: string; // Optional link to a specific mission

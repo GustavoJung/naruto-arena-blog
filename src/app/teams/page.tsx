@@ -7,8 +7,12 @@ import CreateTeamBar from '@/components/CreateTeamBar';
 import styles from '../page.module.css';
 
 export default function TeamsPage() {
-    const { teams } = useTeams();
+    const { teams, loading } = useTeams();
     const [filter, setFilter] = useState<'All' | 'Mission' | 'Ranking'>('All');
+
+    if (loading) {
+        return <div className={styles.container}><h1 className={styles.title}>Carregando times...</h1></div>;
+    }
 
     const filteredTeams = teams.filter(team => {
         if (filter === 'All') return true;

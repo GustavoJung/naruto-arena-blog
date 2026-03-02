@@ -148,13 +148,16 @@ export default function MissionsPage() {
                                                 className={styles.rewardImage}
                                                 onError={(e) => {
                                                     const target = e.target as HTMLImageElement;
-                                                    if (target.src.endsWith('.jpg')) {
-                                                        target.src = target.src.replace('.jpg', '.png');
-                                                    } else if (target.src.endsWith('.png') && !target.src.includes('fallback')) {
-                                                        // Convert literal name to slug for final fallback
+                                                    const currentSrc = target.src;
+                                                    if (currentSrc.endsWith('.jpg') && !currentSrc.includes('slug=')) {
+                                                        target.src = currentSrc.replace('.jpg', '.png');
+                                                    } else if (!currentSrc.includes('slug=')) {
+                                                        // Try slugified fallbacks for rewards
                                                         const name = selectedMission.reward || selectedMission.card.unlockedCharacter || '';
-                                                        const slug = name.toLowerCase().replace(/[^\\w\\s-]/g, '').replace(/\\s+/g, '-');
-                                                        target.src = `/assets/nawiki/characters/${slug}.png?fallback=1`;
+                                                        const slug = name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^\w\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').trim();
+                                                        target.src = `/naruto-arena-blog/assets/nawiki/characters/${slug}.jpg?slug=1`;
+                                                    } else if (currentSrc.includes('.jpg?slug=1')) {
+                                                        target.src = currentSrc.replace('.jpg?slug=1', '.png?slug=2');
                                                     } else {
                                                         target.style.display = 'none';
                                                     }

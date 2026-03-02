@@ -1703,8 +1703,8 @@
       "missions": [
         {
           "id": "disciples-of-the-toad",
-          "title": "Disciples of the Toad",
-          "section": "S Rank Missions",
+          "title": "Discípulos do Sapo",
+          "section": "Missões Rank S",
           "card": {
             "imageUrl": "https://i.imgur.com/Lm7tyYj.jpg",
             "isAvailable": false,
@@ -1716,12 +1716,25 @@
             "unlockedCharacter": "Jiraiya"
           },
           "missionInfo": {
-            "Mission name": "Disciples of the Toad",
-            "Mission type": "S Rank Missions"
+            "Mission name": "Discípulos do Sapo",
+            "Mission type": "Missões Rank S"
           },
           "requirements": "",
           "reward": "Jiraiya",
-          "goals": [],
+          "goals": [
+            {
+              "text": "Vença 5 batalhas consecutivas com Uzumaki Naruto. (0/5)",
+              "isCompleted": false
+            },
+            {
+              "text": "Vença 5 batalhas consecutivas com Namikaze Minato. (0/5)",
+              "isCompleted": false
+            },
+            {
+              "text": "Vença 20 batalhas com Uzumaki Naruto ou Namikaze Minato. (0/20)",
+              "isCompleted": false
+            }
+          ],
           "images": {
             "mission": {
               "url": "https://i.imgur.com/Lm7tyYj.jpg",
@@ -1733,8 +1746,8 @@
         },
         {
           "id": "disciples-of-the-slug",
-          "title": "Disciples of the Slug",
-          "section": "S Rank Missions",
+          "title": "Discípulos da Lesma",
+          "section": "Missões Rank S",
           "card": {
             "imageUrl": "https://i.imgur.com/pPBd4vH.jpg",
             "isAvailable": false,
@@ -1746,12 +1759,25 @@
             "unlockedCharacter": "Tsunade"
           },
           "missionInfo": {
-            "Mission name": "Disciples of the Slug",
-            "Mission type": "S Rank Missions"
+            "Mission name": "Discípulos da Lesma",
+            "Mission type": "Missões Rank S"
           },
           "requirements": "",
           "reward": "Tsunade",
-          "goals": [],
+          "goals": [
+            {
+              "text": "Vença 5 batalhas consecutivas com Haruno Sakura. (0/5)",
+              "isCompleted": false
+            },
+            {
+              "text": "Vença 5 batalhas consecutivas com Shizune. (0/5)",
+              "isCompleted": false
+            },
+            {
+              "text": "Vença 20 batalhas com Haruno Sakura ou Shizune. (0/20)",
+              "isCompleted": false
+            }
+          ],
           "images": {
             "mission": {
               "url": "https://i.imgur.com/pPBd4vH.jpg",
@@ -1763,8 +1789,8 @@
         },
         {
           "id": "disciples-of-the-snake",
-          "title": "Disciples of the Snake",
-          "section": "S Rank Missions",
+          "title": "Discípulos da Cobra",
+          "section": "Missões Rank S",
           "card": {
             "imageUrl": "https://i.imgur.com/nHnmL4p.jpg",
             "isAvailable": false,
@@ -1776,12 +1802,25 @@
             "unlockedCharacter": "Orochimaru"
           },
           "missionInfo": {
-            "Mission name": "Disciples of the Snake",
-            "Mission type": "S Rank Missions"
+            "Mission name": "Discípulos da Cobra",
+            "Mission type": "Missões Rank S"
           },
           "requirements": "",
           "reward": "Orochimaru",
-          "goals": [],
+          "goals": [
+            {
+              "text": "Vença 5 batalhas consecutivas com Uchiha Sasuke. (0/5)",
+              "isCompleted": false
+            },
+            {
+              "text": "Vença 5 batalhas consecutivas com Yakushi Kabuto. (0/5)",
+              "isCompleted": false
+            },
+            {
+              "text": "Vença 20 batalhas com Uchiha Sasuke ou Yakushi Kabuto. (0/20)",
+              "isCompleted": false
+            }
+          ],
           "images": {
             "mission": {
               "url": "https://i.imgur.com/nHnmL4p.jpg",
@@ -1793,8 +1832,8 @@
         },
         {
           "id": "the-god-of-the-shinobi",
-          "title": "The God of the Shinobi",
-          "section": "S Rank Missions",
+          "title": "O Deus dos Shinobi",
+          "section": "Missões Rank S",
           "card": {
             "imageUrl": "https://i.imgur.com/FOSgnsQ.jpg",
             "isAvailable": false,
@@ -1804,27 +1843,40 @@
             "levelRequirement": 26,
             "completedRequeriments": [
               {
-                "name": "Disciples of the Toad",
+                "name": "Discípulos do Sapo",
                 "color": "red"
               },
               {
-                "name": "Disciples of the Slug",
+                "name": "Discípulos da Lesma",
                 "color": "red"
               },
               {
-                "name": "Disciples of the Snake",
+                "name": "Discípulos da Cobra",
                 "color": "red"
               }
             ],
             "unlockedCharacter": "Sandaime Hokage"
           },
           "missionInfo": {
-            "Mission name": "The God of the Shinobi",
-            "Mission type": "S Rank Missions"
+            "Mission name": "O Deus dos Shinobi",
+            "Mission type": "Missões Rank S"
           },
           "requirements": "",
           "reward": "Sandaime Hokage",
-          "goals": [],
+          "goals": [
+            {
+              "text": "Vença 5 batalhas consecutivas com Jiraiya. (0/5)",
+              "isCompleted": false
+            },
+            {
+              "text": "Vença 5 batalhas consecutivas com Tsunade. (0/5)",
+              "isCompleted": false
+            },
+            {
+              "text": "Vença 5 batalhas consecutivas com Orochimaru. (0/5)",
+              "isCompleted": false
+            }
+          ],
           "images": {
             "mission": {
               "url": "https://i.imgur.com/FOSgnsQ.jpg",
@@ -1836,8 +1888,8 @@
         },
         {
           "id": "the-resurrection-of-the-first",
-          "title": "The Resurrection of the First",
-          "section": "S Rank Missions",
+          "title": "A Ressurreição do Primeiro",
+          "section": "Missões Rank S",
           "card": {
             "imageUrl": "https://i.imgur.com/PfOaRWq.jpg",
             "isAvailable": false,
@@ -1847,19 +1899,28 @@
             "levelRequirement": 26,
             "completedRequeriments": [
               {
-                "name": "The God of the Shinobi",
+                "name": "O Deus dos Shinobi",
                 "color": "red"
               }
             ],
             "unlockedCharacter": "Shodai Hokage"
           },
           "missionInfo": {
-            "Mission name": "The Resurrection of the First",
-            "Mission type": "S Rank Missions"
+            "Mission name": "A Ressurreição do Primeiro",
+            "Mission type": "Missões Rank S"
           },
           "requirements": "",
           "reward": "Shodai Hokage",
-          "goals": [],
+          "goals": [
+            {
+              "text": "Vença 5 batalhas consecutivas com Sarutobi Hiruzen. (0/5)",
+              "isCompleted": false
+            },
+            {
+              "text": "Vença 5 batalhas consecutivas com Orochimaru. (0/5)",
+              "isCompleted": false
+            }
+          ],
           "images": {
             "mission": {
               "url": "https://i.imgur.com/PfOaRWq.jpg",
@@ -1871,8 +1932,8 @@
         },
         {
           "id": "the-resurrection-of-the-second",
-          "title": "The Resurrection of the Second",
-          "section": "S Rank Missions",
+          "title": "A Ressurreição do Segundo",
+          "section": "Missões Rank S",
           "card": {
             "imageUrl": "https://i.imgur.com/3RTEsKR.jpg",
             "isAvailable": false,
@@ -1882,19 +1943,32 @@
             "levelRequirement": 26,
             "completedRequeriments": [
               {
-                "name": "The God of the Shinobi",
+                "name": "O Deus dos Shinobi",
                 "color": "red"
               }
             ],
             "unlockedCharacter": "Nidaime Hokage"
           },
           "missionInfo": {
-            "Mission name": "The Resurrection of the Second",
-            "Mission type": "S Rank Missions"
+            "Mission name": "A Ressurreição do Segundo",
+            "Mission type": "Missões Rank S"
           },
           "requirements": "",
           "reward": "Nidaime Hokage",
-          "goals": [],
+          "goals": [
+            {
+              "text": "Vença 5 batalhas consecutivas com Sarutobi Hiruzen. (0/54)",
+              "isCompleted": false
+            },
+            {
+              "text": "Vença 5 batalhas consecutivas com Orochimaru. (0/5)",
+              "isCompleted": false
+            },
+            {
+              "text": "Vença 5 batalhas consecutivas com ET Senju Hashirama. (0/5)",
+              "isCompleted": false
+            }
+          ],
           "images": {
             "mission": {
               "url": "https://i.imgur.com/3RTEsKR.jpg",
@@ -2316,12 +2390,17 @@
             "unlockedCharacter": "Yamato (S)"
           },
           "missionInfo": {
-            "Mission name": "A New Team Leader",
-            "Mission type": "Shippuuden Missions"
+            "Mission name": "Um Novo Líder de Esquadrão",
+            "Mission type": "Missões Shippuuden"
           },
           "requirements": "",
           "reward": "Yamato (S)",
-          "goals": [],
+          "goals": [
+            {
+              "text": "Vença 4 batalhas consecutivas com Hatake Kakashi (S) e Sai (S) no mesmo time.(0/4)",
+              "isCompleted": false
+            }
+          ],
           "images": {
             "mission": {
               "url": "https://i.imgur.com/mFwe6eK.jpg",
@@ -2333,8 +2412,8 @@
         },
         {
           "id": "return-of-the-snake",
-          "title": "Return of the Snake",
-          "section": "Shippuuden Missions",
+          "title": "O Retorno da Cobra",
+          "section": "Missões Shippuuden",
           "card": {
             "imageUrl": "https://i.imgur.com/vRbGnul.jpg",
             "isAvailable": false,
@@ -2344,23 +2423,36 @@
             "levelRequirement": 26,
             "completedRequeriments": [
               {
-                "name": "The Real Itachi",
+                "name": "O Verdadeiro Itachi",
                 "color": "red"
               },
               {
-                "name": "A New Team Leader",
+                "name": "Um Novo Líder de Esquadrão",
                 "color": "red"
               }
             ],
             "unlockedCharacter": "Orochimaru (S)"
           },
           "missionInfo": {
-            "Mission name": "Return of the Snake",
-            "Mission type": "Shippuuden Missions"
+            "Mission name": "O Retorno da Cobra",
+            "Mission type": "Missões Shippuuden"
           },
           "requirements": "",
           "reward": "Orochimaru (S)",
-          "goals": [],
+          "goals": [
+            {
+              "text": "Vença 4 batalhas seguidas com Orochimaru (0/4)",
+              "isCompleted": true
+            },
+            {
+              "text": "Vença 4 batalhas seguidas com Yakushi Kabuto (0/4)",
+              "isCompleted": true
+            },
+            {
+              "text": "Vença 10 batalhas com Yamato (0/10)",
+              "isCompleted": false
+            }
+          ],
           "images": {
             "mission": {
               "url": "https://i.imgur.com/vRbGnul.jpg",
@@ -2372,8 +2464,8 @@
         },
         {
           "id": "a-double-agent",
-          "title": "A Double Agent",
-          "section": "Shippuuden Missions",
+          "title": "Agente Duplo",
+          "section": "Missões Shippuuden",
           "card": {
             "imageUrl": "https://i.imgur.com/FU7sZfm.png",
             "isAvailable": false,
@@ -2385,12 +2477,25 @@
             "unlockedCharacter": "Yakushi Kabuto (S)"
           },
           "missionInfo": {
-            "Mission name": "A Double Agent",
-            "Mission type": "Shippuuden Missions"
+            "Mission name": "Agente Duplo",
+            "Mission type": "Missões Shippuuden"
           },
           "requirements": "",
           "reward": "Yakushi Kabuto (S)",
-          "goals": [],
+          "goals": [
+            {
+              "text": "Vença 3 batalhas seguidas com Orochimaru (0/3)",
+              "isCompleted": false
+            },
+            {
+              "text": "Vença 4 batalhas seguidas com Yakushi Kabuto (0/4)",
+              "isCompleted": false
+            },
+            {
+              "text": "Vença 10 batalhas com qualquer membro do Time 7 (0/10)",
+              "isCompleted": false
+            }
+          ],
           "images": {
             "mission": {
               "url": "https://i.imgur.com/FU7sZfm.png",
@@ -2402,8 +2507,8 @@
         },
         {
           "id": "what-lies-beneath",
-          "title": "What Lies Beneath",
-          "section": "Shippuuden Missions",
+          "title": "O que se esconde por trás",
+          "section": "Missões Shippuuden",
           "card": {
             "imageUrl": "https://i.imgur.com/CC3boVT.jpg",
             "isAvailable": false,
@@ -2413,23 +2518,36 @@
             "levelRequirement": 26,
             "completedRequeriments": [
               {
-                "name": "Coming Out of Retirement",
+                "name": "Saindo da Aposentadoria",
                 "color": "green"
               },
               {
-                "name": "A New Team Leader",
+                "name": "Um Novo Líder de Esquadrão",
                 "color": "red"
               }
             ],
             "unlockedCharacter": "Four Tail Kyuubi Naruto (S)"
           },
           "missionInfo": {
-            "Mission name": "What Lies Beneath",
-            "Mission type": "Shippuuden Missions"
+            "Mission name": "O que se esconde por trás",
+            "Mission type": "Missões Shippuuden"
           },
           "requirements": "",
           "reward": "Four Tail Kyuubi Naruto (S)",
-          "goals": [],
+          "goals": [
+            {
+              "text": "Vença 3 batalhas seguidas com Yamato (0/3)",
+              "isCompleted": false
+            },
+            {
+              "text": "Vença 4 batalhas seguidas com Uzumaki Naruto (0/4)",
+              "isCompleted": false
+            },
+            {
+              "text": "Vença 5 batalhas seguidas com Orochimaru (0/5)",
+              "isCompleted": false
+            }
+          ],
           "images": {
             "mission": {
               "url": "https://i.imgur.com/CC3boVT.jpg",
@@ -2441,8 +2559,8 @@
         },
         {
           "id": "where-the-shadows-lie",
-          "title": "Where the Shadows Lie",
-          "section": "Shippuuden Missions",
+          "title": "Onde as sombras mentem",
+          "section": "Missões Shippuuden",
           "card": {
             "imageUrl": "https://i.imgur.com/kqrbOVl.jpg",
             "isAvailable": true,
@@ -2463,8 +2581,8 @@
             "unlockedCharacter": "Nara Shikamaru (S)"
           },
           "missionInfo": {
-            "Mission name": "Where the Shadows Lie",
-            "Mission type": "Shippuuden Missions"
+            "Mission name": "Onde as sombras mentem",
+            "Mission type": "Missões Shippuuden"
           },
           "requirements": "Rank: At least Chuunin Mission RewardMission \"Where the Shadows Lie\" completion",
           "reward": "Nara Shikamaru (S)",
@@ -2489,8 +2607,8 @@
         },
         {
           "id": "a-guardian-of-the-flame",
-          "title": "A Guardian of the Flame",
-          "section": "Shippuuden Missions",
+          "title": "Guardião da Chama",
+          "section": "Missões Shippuuden",
           "card": {
             "imageUrl": "https://i.imgur.com/UCDVS6A.jpg",
             "isAvailable": false,
@@ -2500,23 +2618,40 @@
             "levelRequirement": 21,
             "completedRequeriments": [
               {
-                "name": "A New Team Leader",
+                "name": "Um Novo Líder de Esquadrão",
                 "color": "red"
               },
               {
-                "name": "Where the Shadows Lie",
+                "name": "Onde as sombras mentem",
                 "color": "green"
               }
             ],
             "unlockedCharacter": "Sarutobi Asuma (S)"
           },
           "missionInfo": {
-            "Mission name": "A Guardian of the Flame",
-            "Mission type": "Shippuuden Missions"
+            "Mission name": "Guardião da Chama",
+            "Mission type": "Missões Shippuuden"
           },
           "requirements": "",
           "reward": "Sarutobi Asuma (S)",
-          "goals": [],
+          "goals": [
+            {
+              "text": "Vença 3 batalhas consecutivas com Nara Shikamaru. (0/3)",
+              "isCompleted": false
+            },
+            {
+              "text": "Vença 3 batalhas consecutivas com Yamanaka Ino. (0/3)",
+              "isCompleted": false
+            },
+            {
+              "text": "Vença 3 batalhas consecutivas com Akimichi Chouji. (0/3)",
+              "isCompleted": false
+            },
+            {
+              "text": "Vença 10 batalhas com Sarutobi Asuma. (0/10)",
+              "isCompleted": false
+            }
+          ],
           "images": {
             "mission": {
               "url": "https://i.imgur.com/UCDVS6A.jpg",
@@ -2528,8 +2663,8 @@
         },
         {
           "id": "a-portly-but-steadfast-ninja",
-          "title": "A Portly but Steadfast Ninja",
-          "section": "Shippuuden Missions",
+          "title": "Um ninja robusto, mas firme",
+          "section": "Missões Shippuuden",
           "card": {
             "imageUrl": "https://i.imgur.com/jQ93K50.jpg",
             "isAvailable": true,
@@ -2541,8 +2676,8 @@
             "unlockedCharacter": "Akimichi Chouji (S)"
           },
           "missionInfo": {
-            "Mission name": "A Portly but Steadfast Ninja",
-            "Mission type": "Shippuuden Missions"
+            "Mission name": "Um ninja robusto, mas firme",
+            "Mission type": "Missões Shippuuden"
           },
           "requirements": "Rank: At least Anbu Mission RewardMission \"A Portly but Steadfast Ninja\" completion",
           "reward": "Akimichi Chouji (S)",
@@ -2567,8 +2702,8 @@
         },
         {
           "id": "blondes-have-all-the-fun",
-          "title": "Blondes Have All the Fun",
-          "section": "Shippuuden Missions",
+          "title": "Loiras têm todo o divertimento",
+          "section": "Missões Shippuuden",
           "card": {
             "imageUrl": "https://i.imgur.com/C9ECnHg.jpg",
             "isAvailable": true,
@@ -2580,10 +2715,10 @@
             "unlockedCharacter": "Yamanaka Ino (S)"
           },
           "missionInfo": {
-            "Mission name": "Blondes Have All the Fun",
-            "Mission type": "Shippuuden Missions"
+            "Mission name": "Loiras têm todo o divertimento",
+            "Mission type": "Missões Shippuuden"
           },
-          "requirements": "Rank: At least Anbu Mission RewardMission \"Blondes Have All the Fun\" completion",
+          "requirements": "Rank: At least Anbu Mission RewardMission \"Loiras têm todo o divertimento\" completion",
           "reward": "Yamanaka Ino (S)",
           "goals": [
             {
@@ -2606,8 +2741,8 @@
         },
         {
           "id": "the-konoha-man-of-mystery",
-          "title": "The Konoha Man of Mystery",
-          "section": "Shippuuden Missions",
+          "title": "O Homem misterioso de Konoha",
+          "section": "Missões Shippuuden",
           "card": {
             "imageUrl": "https://i.imgur.com/5zDFBKF.jpg",
             "isAvailable": false,
@@ -2617,23 +2752,32 @@
             "levelRequirement": 21,
             "completedRequeriments": [
               {
-                "name": "A Portly but Steadfast Ninja",
+                "name": "Um ninja robusto, mas firme",
                 "color": "red"
               },
               {
-                "name": "Blondes Have All the Fun",
+                "name": "Loiras têm todo o divertimento",
                 "color": "red"
               }
             ],
             "unlockedCharacter": "Aburame Shino (S)"
           },
           "missionInfo": {
-            "Mission name": "The Konoha Man of Mystery",
-            "Mission type": "Shippuuden Missions"
+            "Mission name": "O Homem misterioso de Konoha",
+            "Mission type": "Missões Shippuuden"
           },
           "requirements": "",
           "reward": "Aburame Shino (S)",
-          "goals": [],
+          "goals": [
+            {
+              "text": "Vença 3 batalhas consecutivas com Aburame Shino. (0/3)",
+              "isCompleted": false
+            },
+            {
+              "text": "Vença 10 batalhas com Aburame Shino. (0/10)",
+              "isCompleted": false
+            }
+          ],
           "images": {
             "mission": {
               "url": "https://i.imgur.com/5zDFBKF.jpg",
@@ -2645,8 +2789,8 @@
         },
         {
           "id": "a-lovestruck-girl",
-          "title": "A Lovestruck Girl",
-          "section": "Shippuuden Missions",
+          "title": "Uma garota apaixonada",
+          "section": "Missões Shippuuden",
           "card": {
             "imageUrl": "https://i.imgur.com/ylXTBAY.jpg",
             "isAvailable": true,
@@ -2658,10 +2802,10 @@
             "unlockedCharacter": "Hyuuga Hinata (S)"
           },
           "missionInfo": {
-            "Mission name": "A Lovestruck Girl",
-            "Mission type": "Shippuuden Missions"
+            "Mission name": "Uma garota apaixonada",
+            "Mission type": "Missões Shippuuden"
           },
-          "requirements": "Rank: At least Anbu Mission RewardMission \"A Lovestruck Girl\" completion",
+          "requirements": "Rank: At least Anbu Mission RewardMission \"Uma garota apaixonada\" completion",
           "reward": "Hyuuga Hinata (S)",
           "goals": [
             {
@@ -2684,8 +2828,8 @@
         },
         {
           "id": "boy-and-his-dog",
-          "title": "Boy and His Dog",
-          "section": "Shippuuden Missions",
+          "title": "Um menino e seu cachorro",
+          "section": "Missões Shippuuden",
           "card": {
             "imageUrl": "https://i.imgur.com/t6xK7vV.jpg",
             "isAvailable": false,
@@ -2706,12 +2850,21 @@
             "unlockedCharacter": "Inuzuka Kiba (S)"
           },
           "missionInfo": {
-            "Mission name": "Boy and His Dog",
-            "Mission type": "Shippuuden Missions"
+            "Mission name": "Um menino e seu cachorro",
+            "Mission type": "Missões Shippuuden"
           },
           "requirements": "",
           "reward": "Inuzuka Kiba (S)",
-          "goals": [],
+          "goals": [
+            {
+              "text": "Vença 3 batalhas consecutivas com Inuzuka Kiba. (0/4)",
+              "isCompleted": false
+            },
+            {
+              "text": "Vença 10 batalhas com Inuzuka Kiba. (0/10)",
+              "isCompleted": false
+            }
+          ],
           "images": {
             "mission": {
               "url": "https://i.imgur.com/t6xK7vV.jpg",

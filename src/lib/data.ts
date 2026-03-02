@@ -117,12 +117,18 @@ export function findSkillByName(
     const lowerName = name.toLowerCase();
 
     if (characterContext) {
-        for (const char of characterContext) {
-            const skill = char.skills.find(s => s.name.toLowerCase() === lowerName);
-            if (skill) return { ...skill, characterId: char.id };
+        for (const localChar of characterContext) {
+            // Find the full character data to get skills, as characterContext might contain lightweight versions
+            const fullChar = localChar.skills ? localChar : ALL_CHARACTERS.find(c => c.id === localChar.id);
+
+            if (fullChar && fullChar.skills) {
+                const skill = fullChar.skills.find(s => s.name.toLowerCase() === lowerName);
+                if (skill) return { ...skill, characterId: fullChar.id };
+            }
         }
     }
 
+    // Global fallback
     for (const char of ALL_CHARACTERS) {
         const skill = char.skills.find(s => s.name.toLowerCase() === lowerName);
         if (skill) return { ...skill, characterId: char.id };
