@@ -25,7 +25,7 @@ if (typeof window !== "undefined") {
 // Initialize Firebase only if we have a valid config
 const isConfigValid = !!firebaseConfig.apiKey && firebaseConfig.apiKey !== "undefined";
 
-let app;
+let app: any;
 let auth: any;
 let db: any;
 
@@ -37,12 +37,11 @@ if (isConfigValid) {
     } catch (error) {
         console.error("Firebase initialization failed:", error);
     }
-} else {
-    // During build or if keys are missing, we use a different approach
-    // This prevents the build from crashing
-    if (typeof window === "undefined") {
-        console.warn("Firebase config is missing or invalid during build/server-side execution.");
-    }
+} else if (typeof window !== "undefined") {
+    console.warn("⚠️ Firebase: Configuração não encontrada. Verifique suas variáveis de ambiente ou o arquivo .env.local.");
+    console.warn("Se você estiver em produção (ex: Vercel/GitHub Pages), certifique-se de adicionar as chaves nas configurações do projeto.");
 }
 
+// Export null/mock if not initialized to prevent some crashes, 
+// though consumers using them directly might still throw.
 export { app, auth, db };

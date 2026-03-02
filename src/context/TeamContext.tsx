@@ -37,21 +37,31 @@ export const TeamProvider = ({ children }: { children: ReactNode }) => {
 
     // Load from Firestore on mount
     useEffect(() => {
-        const q = query(collection(db, 'teams'), orderBy('createdAt', 'desc'));
-        const unsubscribe = onSnapshot(q, (snapshot) => {
-            const teamsList = snapshot.docs.map(doc => ({
-                id: doc.id,
-                ...doc.data()
-            })) as Team[];
-            setTeams(teamsList);
+        if (!db) {
             setLoading(false);
-        }, (error) => {
-            console.error("Error fetching teams:", error);
-            setLoading(false);
-        });
+            return;
+        }
 
-        return () => unsubscribe();
-    }, []);
+        try {
+            const q = query(collection(db, 'teams'), orderBy('createdAt', 'desc'));
+            const unsubscribe = onSnapshot(q, (snapshot) => {
+                const teamsList = snapshot.docs.map(doc => ({
+                    id: doc.id,
+                    ...doc.data()
+                })) as Team[];
+                setTeams(teamsList);
+                setLoading(false);
+            }, (error) => {
+                console.error("Error fetching teams:", error);
+                setLoading(false);
+            });
+
+            return () => unsubscribe();
+        } catch (err) {
+            console.error("Failed to setup team listener:", err);
+            setLoading(false);
+        }
+    }, [db]);
 
     const addTeam = async (teamData: Omit<Team, 'id' | 'likes' | 'createdAt'>) => {
         if (!user) {

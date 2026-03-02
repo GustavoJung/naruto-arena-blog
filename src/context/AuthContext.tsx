@@ -24,6 +24,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const ADMIN_EMAIL = 'udesc.gustavo@gmail.com';
 
     useEffect(() => {
+        if (!auth) {
+            setLoading(false);
+            return;
+        }
+
         const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
             setUser(firebaseUser);
 
@@ -31,7 +36,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
                 // If email matches the fixed admin email, set role to Admin
                 if (firebaseUser.email === ADMIN_EMAIL) {
                     setRole('Admin');
-                } else {
+                } else if (db) {
                     // Otherwise try to get role from Firestore if user exists
                     try {
                         const userDoc = await getDoc(doc(db, 'users', firebaseUser.uid));
@@ -53,7 +58,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         });
 
         return () => unsubscribe();
-    }, []);
+    }, [auth, db]);
 
     return (
         <AuthContext.Provider value={{
