@@ -3,12 +3,12 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-    apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-    authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-    projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-    storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-    messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-    appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+    apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY?.replace(/^["']|["']$/g, ""),
+    authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN?.replace(/^["']|["']$/g, ""),
+    projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID?.replace(/^["']|["']$/g, ""),
+    storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET?.replace(/^["']|["']$/g, ""),
+    messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID?.replace(/^["']|["']$/g, ""),
+    appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID?.replace(/^["']|["']$/g, ""),
 };
 
 // Debug: Check if config is loaded (only on client)
@@ -22,9 +22,27 @@ if (typeof window !== "undefined") {
     }
 }
 
-// Initialize Firebase
-const app = getApps().length > 0 ? getApp() : initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
+// Initialize Firebase only if we have a valid config
+const isConfigValid = !!firebaseConfig.apiKey && firebaseConfig.apiKey !== "undefined";
+
+let app;
+let auth: any;
+let db: any;
+
+if (isConfigValid) {
+    try {
+        app = getApps().length > 0 ? getApp() : initializeApp(firebaseConfig);
+        auth = getAuth(app);
+        db = getFirestore(app);
+    } catch (error) {
+        console.error("Firebase initialization failed:", error);
+    }
+} else {
+    // During build or if keys are missing, we use a different approach
+    // This prevents the build from crashing
+    if (typeof window === "undefined") {
+        console.warn("Firebase config is missing or invalid during build/server-side execution.");
+    }
+}
 
 export { app, auth, db };
